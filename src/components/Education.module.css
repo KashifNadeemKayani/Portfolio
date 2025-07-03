@@ -1,0 +1,60 @@
+.education {
+  min-height: 100vh;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #8637ff, #ff37ea);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.card {
+  background: linear-gradient(135deg, #f7b731, #ffca28);
+  color: #333333;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .text-muted {
+  color: #555555 !important;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .education {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 0;
+    display: block; /* Change to block to start from left */
+    align-items: flex-start; /* Align to start */
+    justify-content: flex-start; /* Align to start */
+    text-align: left; /* Ensure text starts from left */
+  }
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .card {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,109 @@
+.certificates {
+  min-height: 100vh;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #ff37ea, #8637ff);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  transition: all 0.3s ease;
+  will-change: transform;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.certImage {
+  height: 150px;
+  object-fit: cover;
+}
+
+.text-muted {
+  color: #333333 !important;
+  font-weight: 500;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+}
+
+.enlargedImage {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 10px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff37ea, #8637ff); /* Theme gradient */
+  border: none;
+  border-radius: 50%;
+  color: #f7b731; /* Yellow cross */
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1003;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton:hover {
+  background: linear-gradient(135deg, #8637ff, #ff37ea); /* Reverse gradient on hover */
+  color: #e0a725; /* Lighter yellow on hover */
+}
+
+@media (max-width: 768px) {
+  .certificates {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 0;
+  }
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .card {
+    font-size: 1rem;
+  }
+  .closeButton {
+    top: 50px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;  
+  }
+}

@@ -1,0 +1,100 @@
+
+.contact {
+  min-height: 90vh;
+  /* padding: 5rem 0; */
+  background: linear-gradient(135deg, #8637ff, #ff37ea);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.connectTitle {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #e0e0e0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem; /* Space below Connect with Me */
+}
+
+.icon {
+  color: #f7b731;
+  transition: all 0.3s ease;
+  will-change: color;
+  margin: 0.5rem;
+}
+
+.icon:hover {
+  color: #e0a725;
+}
+
+.input {
+  background: rgba(255, 183, 49, 0.2);
+  color: #ffffff;
+  border: 1px solid #f7b731;
+  border-radius: 5px;
+}
+
+.input:focus {
+  background: rgba(255, 183, 49, 0.3);
+  border-color: #e0a725;
+  color: #ffffff;
+}
+
+.submitButton {
+  background: #f7b731;
+  border: none !important;
+  color: #000000;
+  font-weight: 600;
+}
+
+.submitButton:hover {
+  background: #e0a725;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-height: 80vh;
+    padding: 60px 0 0;
+    position: relative;
+  }
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .connectTitle {
+    font-size: 1.4rem;
+  }
+  .socialIcons {
+    position: static;
+    margin-top: 0.5rem; /* Reduced space on mobile */
+    justify-content: center;
+  }
+  .icon {
+    margin: 0.3rem;
+  }
+}

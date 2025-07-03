@@ -1,0 +1,25 @@
+.backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f7b731;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.backToTop.show {
+  display: block;
+}
+
+.backToTop:hover {
+  background: #e0a725;
+}

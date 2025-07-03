@@ -39,14 +39,17 @@
     max-width: 100%;
     padding-top: 60px;
   }
+
   .title {
     font-size: 2rem;
   }
+
   .profileImage {
     width: 250px;
     height: 250px;
     margin-bottom: 1rem;
   }
+
   .flex-column {
     flex-direction: column !important;
   }

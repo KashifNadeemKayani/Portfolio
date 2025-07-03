@@ -6,7 +6,7 @@ import styles from './Hero.module.css';
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section id="Me" className={styles.hero}>
       <Container>
         <Row className="align-items-center">
           <Col md={6}>
@@ -17,7 +17,7 @@ const Hero = () => {
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
             >
-              <h1 className={styles.title}>Assalamualaikum,  I'm Kashif Nadeem Kayani</h1>
+              <h1 className={styles.title}>Assalamualaikum, I'm Kashif Nadeem Kayani</h1>
               <p className={styles.description}>
                 A passionate WordPress developer, MERN stack enthusiast, and creative designer specializing in Fusion and DaVinci Resolve.
               </p>

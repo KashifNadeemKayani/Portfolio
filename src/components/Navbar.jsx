@@ -139,7 +139,7 @@ import { motion } from 'framer-motion';
 import styles from './Navbar.module.css';
 
 const sections = [
-  'hero',
+  'Me',
   'education',
   'skills',
   'projects',

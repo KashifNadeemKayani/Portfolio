@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import cert1 from '../assets/Pic.jpg';
+// import cert1 from '../assets/Pic.jpg';
 import KT from '../assets/KT Hatori.jpg';
 import AKDC from '../assets/AKDC.jpg';
 import AKDCN from '../assets/ADKCnationals.jpg';

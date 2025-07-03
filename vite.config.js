@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   base: '/Portfolio/',
-  plugins: [react()],
+  plugins: [react(), imagetools()],
   server: {
     host: true, // allows access from local network (e.g., mobile)
     port: 5173, // or any other port you'd like

@@ -1,8 +1,9 @@
+/* ===== Base layout and global styles ===== */
 .navbar {
   background: rgba(0, 0, 0, 0.9);
   padding: 1.5rem 0;
   max-width: 100%;
-  margin: 3px auto 0 auto;
+  margin: 3px auto 0;
   border-radius: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -12,6 +13,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .abc {
@@ -27,6 +29,7 @@
   cursor: pointer;
   transition: color 0.3s ease;
   will-change: color;
+  white-space: nowrap;
 }
 
 .navLink:hover {
@@ -38,17 +41,31 @@
   border-bottom: 2px solid #f7b731;
 }
 
+/* ===== Mobile-specific adjustments ===== */
 @media (max-width: 768px) {
   .navbar {
     padding: 0.5rem;
     margin: 0;
     border-radius: 0;
     flex-direction: row;
-    /* REMOVE width: 100% and max-width: 100%! */
-    box-sizing: border-box;
-    overflow-x: visible;
+    overflow-x: hidden;
     justify-content: flex-start;
-    /* important! */
+  }
+
+  .navItems {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0.5rem;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .navItems::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
   }
 
   .navLink {
@@ -58,39 +75,13 @@
   }
 
   .navLink:hover {
-    color: whites !important;
+    color: #f7b731 !important;
   }
 
-  .sliderOuter {
-    width: 100vw;
-    /* Allow the slider to fill the screen */
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .sliderContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    /* DO NOT set width or max-width here! */
-    padding: 0.5rem 0;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    /* overflow-x: auto; */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-  }
-
-  .sliderContainer::-webkit-scrollbar {
-    display: none;
-  }
-
+  /* Clear any leftover slider styles */
+  .sliderOuter,
+  .sliderContainer,
   .slideItem {
-    flex: 0 0 auto;
-    min-width: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    all: unset;
   }
 }

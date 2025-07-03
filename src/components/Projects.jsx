@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import project1 from '../assets/CV.png';
-import Reliable from '../assets/Reliable.png';
-import TicTacToe from '../assets/TicTacToe.png';
+import project1 from '../assets/CV.jpg';
+import Reliable from '../assets/Reliable.jpg';
+import TicTacToe from '../assets/TicTacToe.jpg';
 import ReactPlayer from 'react-player';
 import styles from './Projects.module.css';
 

@@ -18,15 +18,24 @@ const App = () => {
 
   useEffect(() => {
     const handleLoad = () => {
-      setLoading(false);
+      console.log('Page fully loaded');
+      setLoading(false); // Set loading to false when load event fires
     };
 
     // Add event listener for page load
     window.addEventListener('load', handleLoad);
 
+    // Fallback: Check if page is already loaded
+    if (document.readyState === 'complete') {
+      console.log('Page already loaded');
+      setLoading(false);
+    }
+
     // Cleanup the event listener on unmount
-    return () => window.removeEventListener('load', handleLoad);
-  }, []);
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []); // Empty dependency array ensures this runs once on mount
 
   return (
     <div className={styles.app}>

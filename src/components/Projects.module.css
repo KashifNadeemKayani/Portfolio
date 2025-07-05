@@ -74,7 +74,7 @@
 }
 
 .disabledCategory:hover::after {
-  content: '✖';
+  /* content: '✖'; */
   color: #ff0000;
   font-size: 1.2em;
   position: absolute;

@@ -12,14 +12,20 @@ import Preloader from './components/Preloader';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 import styles from './App.module.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import './Projects.module.css';
+
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    // Add event listener for page load
+    window.addEventListener('load', handleLoad);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener('load', handleLoad);
   }, []);
 
   return (

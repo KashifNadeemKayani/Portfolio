@@ -1,22 +1,32 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import styles from './Preloader.module.css';
 
 const Preloader = () => {
-  return (
-    <motion.div
-      className={styles.preloader}
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Hide preloader when the page is fully loaded
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    // Cleanup the event listener
+    return () => window.removeEventListener('load', handleLoad);
+  }, []);
+
+  return loading ? (
+    <div className={styles.preloader}>
       <div className={styles.dots}>
-        {[...Array(5)].map((_, index) => (
-          <div key={index} className={styles.dot}></div>
-        ))}
+        <div className={styles.dot}></div>
+        <div className={styles.dot}></div>
+        <div className={styles.dot}></div>
+        <div className={styles.dot}></div>
+        <div className={styles.dot}></div>
       </div>
-    </motion.div>
-  );
+    </div>
+  ) : null;
 };
 
 export default Preloader;

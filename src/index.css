@@ -45,3 +45,95 @@ html {
     padding-top: 50px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  /* Ensure no horizontal scroll */
+  background: linear-gradient(135deg, #8637ff, #ff37ea);
+  padding-top: 70px;
+  width: 100%;
+  /* Explicitly set to 100% */
+  box-sizing: border-box;
+  /* Include padding in width calculation */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* Apply to html as well */
+}
+
+.progress-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.progress-bar {
+  height: 5px;
+  background: #f7b731;
+  width: 0%;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 50px;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  body {
+    padding-top: 40px;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 0.5rem;
+  }
+
+  .row {
+    margin: 0 -0.5rem;
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 0.5rem;
+  }
+}

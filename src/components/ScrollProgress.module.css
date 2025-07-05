@@ -22,10 +22,25 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.1);
   }
+
   .progressBar {
     width: 5px;
     height: 0;
     transition: height 0.2s ease-in-out;
     will-change: height;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .progressContainer {
+    width: 100%;
+    height: 5px;
+  }
+
+  .progressBar {
+    width: 0;
+    height: 5px;
+    transition: width 0.2s ease-in-out;
   }
 }

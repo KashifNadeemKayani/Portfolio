@@ -26,7 +26,6 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  /* border: 5px solid #ffffff; */
   will-change: transform;
   object-fit: contain;
 }
@@ -38,6 +37,10 @@
     width: 100%;
     max-width: 100%;
     padding-top: 60px;
+    flex-direction: column;
+    /* Ensure vertical stacking */
+    align-items: center;
+    /* Center content */
   }
 
   .title {
@@ -45,12 +48,39 @@
   }
 
   .profileImage {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     margin-bottom: 1rem;
+    /* Space between image and text */
   }
 
   .flex-column {
     flex-direction: column !important;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .hero {
+    padding-top: 20px;
+    min-height: 50vh;
+  }
+
+  .row {
+    width: 100%;
+    margin: 0 -0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 0.5rem;
+  }
+
+  .profileImage {
+    width: 300px;
+    height: 300px;
   }
 }

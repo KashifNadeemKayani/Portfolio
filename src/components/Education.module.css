@@ -45,16 +45,35 @@
     width: 100%;
     max-width: 100%;
     padding: 2rem 0;
-    display: block; /* Change to block to start from left */
-    align-items: flex-start; /* Align to start */
-    justify-content: flex-start; /* Align to start */
-    text-align: left; /* Ensure text starts from left */
+    display: block;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
   }
+
   .sectionTitle {
     font-size: 2rem;
   }
+
   .card {
     margin-bottom: 1rem;
     font-size: 1rem;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .education {
+    padding: 1rem 0;
+    min-height: 50vh;
+  }
+
+  .row {
+    width: 100%;
+    margin: 0 -0.5rem;
+  }
+
+  .card {
+    margin-bottom: 0.5rem;
   }
 }

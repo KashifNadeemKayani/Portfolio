@@ -14,12 +14,17 @@
   width: 100%;
   z-index: 1000;
   box-sizing: border-box;
+  overflow-x: hidden;
+  /* Prevent horizontal overflow */
 }
 
 .abc {
   display: flex;
   justify-content: center;
   align-self: center;
+  width: 100%;
+  max-width: 1200px;
+  /* Limit content width */
 }
 
 .navLink {
@@ -75,13 +80,40 @@
   }
 
   .navLink:hover {
-    color: #f7b731 !important;
+    color: #ffffff;
   }
 
-  /* Clear any leftover slider styles */
   .sliderOuter,
   .sliderContainer,
   .slideItem {
     all: unset;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .navbar {
+    padding: 0.5rem 0;
+    margin: 0;
+    margin-top: 5px;
+  }
+
+  .abc {
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+
+  .navItems {
+    padding: 0 0.3rem;
+    overflow-x: auto;
+  }
+
+  .navLink {
+    margin: 0 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .navLink:hover {
+    color: #ffffff;
   }
 }

@@ -1,6 +1,5 @@
 .contact {
-  min-height: 90vh;
-  /* padding: 5rem 0; */
+  min-height: 100vh;
   background: linear-gradient(135deg, #8637ff, #ff37ea);
   color: #ffffff;
   display: flex;
@@ -36,7 +35,6 @@
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1rem;
-  /* Space below Connect with Me */
 }
 
 .icon {
@@ -79,7 +77,7 @@
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
-    min-height: 85vh;
+    min-height: 86vh;
     padding: 60px 0 0;
     position: relative;
   }
@@ -95,11 +93,34 @@
   .socialIcons {
     position: static;
     margin-top: 0.5rem;
-    /* Reduced space on mobile */
     justify-content: center;
   }
 
   .icon {
     margin: 0.3rem;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .contact {
+    padding: 20px 0 0;
+    min-height: 50vh;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .connectTitle {
+    font-size: 1.2rem;
+  }
+
+  .socialIcons {
+    gap: 1rem;
+  }
+
+  .icon {
+    margin: 0.2rem;
   }
 }

@@ -52,13 +52,32 @@
     max-width: 100%;
     padding: 2rem 0;
   }
+
   .sectionTitle {
     font-size: 2rem;
   }
+
   .category {
     font-size: 1.4rem;
   }
+
   .skillItem {
     font-size: 0.9rem;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .skills {
+    padding: 1rem 0;
+    min-height: 50vh;
+  }
+
+  .category {
+    font-size: 1.2rem;
+  }
+
+  .skillItem {
+    margin-bottom: 0.5rem;
   }
 }

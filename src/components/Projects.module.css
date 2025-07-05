@@ -97,13 +97,16 @@
 .projectItem {
   cursor: pointer;
   text-align: center;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .projectImageContainer {
-  width: 600px;
-  height: 337.5px;
+  width: 100%;
+  /* Full width of parent */
+  height: auto;
+  /* Dynamic height based on image */
   background: #1a1a1a;
   display: flex;
   align-items: center;
@@ -115,8 +118,11 @@
 
 .projectImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* Fill container width */
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: contain;
+  /* Scale proportionally without distortion */
 }
 
 /* Enlarged view and close button */
@@ -203,9 +209,18 @@
   }
 
   .categoryButton:hover {
-    background: transparent;
-    border: none;
-    /* color: #4d4040; */
+    background: #e0a725;
+    /* Match activeCategory background */
+    color: #000000;
+    /* Match activeCategory color */
+    font-weight: 700;
+    /* Match activeCategory font-weight */
+  }
+
+  .activeCategory {
+    background: #e0a725;
+    color: #000000;
+    font-weight: 700;
   }
 
   .projectGrid {
@@ -214,12 +229,32 @@
   }
 
   .projectItem {
-    width: 300px;
+    width: 100%;
+    max-width: 100%;
+    /* Allow full width */
   }
 
   .projectImageContainer {
-    width: 300px;
-    height: 168.75px;
+    width: 100%;
+    /* Full width of parent */
+    height: auto;
+    /* Dynamic height based on image */
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .projectImage {
+    width: 100%;
+    /* Fill container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: contain;
+    /* Scale proportionally without distortion */
   }
 
   .customEnlargedView {
@@ -241,7 +276,61 @@
     font-size: 20px;
   }
 
+  .disabledCategory:hover {
+    content: none;
+    color: #a0a0a0;
+    background: transparent;
+  }
+
   .disabledCategory:hover::after {
     content: none;
+    background: transparent;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .projects {
+    padding: 1rem 0;
+    min-height: 50vh;
+  }
+
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .projectItem {
+    width: 100%;
+    max-width: 100%;
+    /* Allow full width */
+  }
+
+  .projectImageContainer {
+    width: 100%;
+    /* Full width of parent */
+    height: auto;
+    /* Dynamic height based on image */
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .projectImage {
+    width: 100%;
+    /* Fill container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: contain;
+    /* Scale proportionally without distortion */
+  }
+
+  .categorySlider {
+    padding: 0;
+    width: 100%;
   }
 }

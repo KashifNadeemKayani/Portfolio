@@ -14,6 +14,8 @@
   cursor: pointer;
   transition: background 0.3s ease;
   will-change: transform, opacity;
+  z-index: 1001;
+  /* Ensure it stays above other content */
 }
 
 .backToTop.show {
@@ -22,4 +24,24 @@
 
 .backToTop:hover {
   background: #e0a725;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .backToTop {
+    bottom: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .backToTop {
+    bottom: 10px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+  }
 }

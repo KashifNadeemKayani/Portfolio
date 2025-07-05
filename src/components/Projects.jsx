@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import project1 from '../assets/CV.jpg';
 import Reliable from '../assets/Reliable.jpg';
 import TicTacToe from '../assets/TicTacToe.jpg';
+import Mech from '../assets/Mechanical.png';
 import ReactPlayer from 'react-player';
 import styles from './Projects.module.css';
 
@@ -13,11 +14,12 @@ const projectData = {
     { title: "The Reliable Mart's Web Page", image: Reliable, link: 'https://thereliablemart.github.io/ItemList/', type: 'web' },
     { title: 'Tic Tac Toe (impossible to beat AI while playing 2nd)', image: TicTacToe, link: 'https://kashifnadeemkayani.github.io/TicTacToe./', type: 'web' },
   ],
+  'Graphic Designing Projects': [
+    { title: 'Canva Poster', image: Mech, type: 'graphic' },
+    // { title: 'Canva Poster', image: Mech, type: 'graphic' },
+  ],
   'Fusion Projects': [
     { title: 'Fusion Project 1', image: project1, type: 'fusion' },
-  ],
-  'Graphic Designing Projects': [
-    { title: 'Canva Poster', image: project1, type: 'graphic' },
   ],
   'Video Editing Projects': [
     { title: 'DaVinci Resolve Video', thumbnail: project1, videoUrl: 'https://www.example.com/sample-video.mp4', type: 'video' },
@@ -29,7 +31,6 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [playing, setPlaying] = useState(false);
   const [activeCategory, setActiveCategory] = useState('Front-End Projects');
-  const [isFrontEndOnly] = useState(true); // Set to false to re-enable all categories
 
   const handleShow = (project) => {
     if (project.type === 'web') {
@@ -67,11 +68,11 @@ const Projects = () => {
   };
 
   const handleCategoryClick = (category) => {
-    if (isFrontEndOnly && category !== 'Front-End Projects') {
+    if (category === 'Fusion Projects' || category === 'Video Editing Projects') {
       if (window.innerWidth <= 768) {
         alert('This category is currently disabled by Kashif Nadeem Kayani.');
       }
-      return; // Prevent category change
+      return; // Prevent category change for disabled categories
     }
     setActiveCategory(category);
   };
@@ -93,9 +94,12 @@ const Projects = () => {
           {Object.keys(projectData).map((category, index) => (
             <button
               key={index}
-              className={`${styles.categoryButton} ${activeCategory === category ? styles.activeCategory : ''} ${isFrontEndOnly && category !== 'Front-End Projects' ? styles.disabledCategory : ''
+              className={`${styles.categoryButton} ${activeCategory === category ? styles.activeCategory : ''} ${(category === 'Fusion Projects' || category === 'Video Editing Projects') ? styles.disabledCategory : ''
                 }`}
               onClick={() => handleCategoryClick(category)}
+              style={{
+                cursor: (category === 'Fusion Projects' || category === 'Video Editing Projects') && window.innerWidth > 768 ? 'not-allowed' : 'pointer',
+              }}
             >
               {category}
             </button>

@@ -68,10 +68,10 @@
   right: 40px;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ff37ea, #8637ff); /* Theme gradient */
+  background: linear-gradient(135deg, #ff37ea, #8637ff);
   border: none;
   border-radius: 50%;
-  color: #f7b731; /* Yellow cross */
+  color: #f7b731;
   font-size: 30px;
   cursor: pointer;
   display: flex;
@@ -82,8 +82,8 @@
 }
 
 .closeButton:hover {
-  background: linear-gradient(135deg, #8637ff, #ff37ea); /* Reverse gradient on hover */
-  color: #e0a725; /* Lighter yellow on hover */
+  background: linear-gradient(135deg, #8637ff, #ff37ea);
+  color: #e0a725;
 }
 
 @media (max-width: 768px) {
@@ -93,17 +93,57 @@
     max-width: 100%;
     padding: 2rem 0;
   }
+
   .sectionTitle {
     font-size: 2rem;
   }
+
   .card {
     font-size: 1rem;
   }
+
   .closeButton {
     top: 50px;
     right: 30px;
     width: 40px;
     height: 40px;
-    font-size: 28px;  
+    font-size: 28px;
+  }
+}
+
+/* Landscape-specific fix for mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .certificates {
+    padding: 1rem 0;
+    min-height: 50vh;
+  }
+
+  .row {
+    width: 100%;
+    margin: 0 -0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 0.5rem;
+  }
+
+  .card {
+    height: 100%;
+  }
+
+  .certImage {
+    height: 120px;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
   }
 }

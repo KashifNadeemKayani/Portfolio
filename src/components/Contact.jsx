@@ -113,7 +113,7 @@ const Contact = () => {
                 <a href="https://github.com/KashifNadeemKayani/" target="_blank" rel="noopener noreferrer">
                   <FaGithub size={30} className={styles.icon} />
                 </a>
-                <a href="www.linkedin.com/in/kashif-nadeem-kayani-060ab1314" target="_blank" rel="noopener noreferrer">
+                <a href="https://linkedin.com/in/kashif-nadeem-kayani-060ab1314" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin size={30} className={styles.icon} />
                 </a>
                 <a href="https://www.instagram.com/kashif_nadeem_kayani_?igsh=MXhnb2pweDc2eDNucQ==" target="_blank" rel="noopener noreferrer">

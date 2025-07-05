@@ -49,6 +49,15 @@
   transition: all 0.3s ease;
   white-space: nowrap;
   position: relative;
+  outline: none;
+  /* Remove default outline */
+}
+
+.categoryButton:focus {
+  outline: none;
+  /* Remove focus outline */
+  box-shadow: none;
+  /* Remove any shadow */
 }
 
 .categoryButton:hover {
@@ -74,7 +83,7 @@
 }
 
 .disabledCategory:hover::after {
-  /* content: '✖'; */
+  content: '✖';
   color: #ff0000;
   font-size: 1.2em;
   position: absolute;
@@ -333,4 +342,11 @@
     padding: 0;
     width: 100%;
   }
+}
+
+/* New class to disable scrolling */
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+  /* Prevent page jump */
 }

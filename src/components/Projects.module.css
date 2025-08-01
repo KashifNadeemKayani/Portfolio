@@ -97,10 +97,16 @@
 .projectGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  /* Default for other categories */
   gap: 20px;
   width: 100%;
   padding: 20px 0;
   justify-items: center;
+}
+
+.projectGrid.graphicDesignGrid {
+  grid-template-columns: repeat(5, 1fr);
+  /* 4 columns for Graphic Designing Projects on PC and above 768px */
 }
 
 .projectItem {
@@ -125,6 +131,11 @@
   margin-bottom: 0;
 }
 
+.projectImageContainer.graphicDesignContainer {
+  background: transparent;
+  /* Remove black borders for Graphic Designing Projects */
+}
+
 .projectImage {
   width: 100%;
   /* Fill container width */
@@ -132,6 +143,24 @@
   /* Maintain aspect ratio */
   object-fit: contain;
   /* Scale proportionally without distortion */
+}
+
+.projectImage.graphicDesignImage {
+  /* No change to height, just ensure it fits without borders */
+}
+
+/* Specific styles for Graphic Designing Projects */
+.graphicDesignContainer {
+  max-height: 250px;
+  /* Reduced height for graphic design projects on PC */
+}
+
+.graphicDesignImage {
+  max-height: 250px;
+  /* Match container height on PC */
+  width: 100%;
+  object-fit: contain;
+  /* Ensure image is not cropped */
 }
 
 /* Enlarged view and close button */
@@ -234,7 +263,13 @@
 
   .projectGrid {
     grid-template-columns: 1fr;
+    /* Default for other categories on mobile */
     gap: 15px;
+  }
+
+  .projectGrid.graphicDesignGrid {
+    grid-template-columns: repeat(3, 1fr);
+    /* 2 columns for Graphic Designing Projects on mobile */
   }
 
   .projectItem {
@@ -257,6 +292,11 @@
     margin-bottom: 0;
   }
 
+  .projectImageContainer.graphicDesignContainer {
+    background: transparent;
+    /* Remove black borders for Graphic Designing Projects on mobile */
+  }
+
   .projectImage {
     width: 100%;
     /* Fill container width */
@@ -264,6 +304,19 @@
     /* Maintain aspect ratio */
     object-fit: contain;
     /* Scale proportionally without distortion */
+  }
+
+  .graphicDesignContainer {
+    max-height: 150px;
+    /* Reduced height for graphic design projects on mobile */
+  }
+
+  .graphicDesignImage {
+    max-height: 150px;
+    /* Match container height on mobile */
+    width: 100%;
+    object-fit: contain;
+    /* Ensure image is not cropped */
   }
 
   .customEnlargedView {
@@ -298,7 +351,7 @@
 }
 
 /* Landscape-specific fix for mobile */
-@media (max-width: 1024px) and (orientation: landscape) {
+@media (max-width: 768px) and (orientation: landscape) {
   .projects {
     padding: 1rem 0;
     min-height: 50vh;
@@ -306,7 +359,13 @@
 
   .projectGrid {
     grid-template-columns: repeat(2, 1fr);
+    /* Default for other categories on landscape mobile */
     gap: 10px;
+  }
+
+  .projectGrid.graphicDesignGrid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for Graphic Designing Projects on landscape mobile */
   }
 
   .projectItem {
@@ -329,6 +388,11 @@
     margin-bottom: 0;
   }
 
+  .projectImageContainer.graphicDesignContainer {
+    background: transparent;
+    /* Remove black borders for Graphic Designing Projects on landscape */
+  }
+
   .projectImage {
     width: 100%;
     /* Fill container width */
@@ -336,6 +400,19 @@
     /* Maintain aspect ratio */
     object-fit: contain;
     /* Scale proportionally without distortion */
+  }
+
+  .graphicDesignContainer {
+    max-height: 200px;
+    /* Reduced height for graphic design projects on landscape */
+  }
+
+  .graphicDesignImage {
+    max-height: 200px;
+    /* Match container height on landscape */
+    width: 100%;
+    object-fit: contain;
+    /* Ensure image is not cropped */
   }
 
   .categorySlider {

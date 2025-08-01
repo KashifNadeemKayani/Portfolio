@@ -216,9 +216,6 @@
 
 
 
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
@@ -226,6 +223,13 @@ import project1 from '../assets/CV.jpg';
 import Reliable from '../assets/Reliable.jpg';
 import TicTacToe from '../assets/TicTacToe.jpg';
 import Mech from '../assets/Mechanical.png';
+import Loosing from '../assets/Graphic/Loosing.jpg';
+import Mirror from '../assets/Graphic/Mirror.jpg';
+import RealFlex from '../assets/Graphic/RealFlex.jpg';
+import Success from '../assets/Graphic/Success.jpg';
+import Sun from '../assets/Graphic/Sun.jpg';
+import TwoThings from '../assets/Graphic/TwoThings.jpg';
+import Voice from '../assets/Graphic/Voice.jpg';
 import ReactPlayer from 'react-player';
 import styles from './Projects.module.css';
 
@@ -237,6 +241,13 @@ const projectData = {
   ],
   'Graphic Designing Projects': [
     { title: 'Canva Poster', image: Mech, type: 'graphic' },
+    { title: 'Canva Poster', image: Success, type: 'graphic' },
+    { title: 'Canva Poster', image: Mirror, type: 'graphic' },
+    { title: 'Canva Poster', image: TwoThings, type: 'graphic' },
+    { title: 'Canva Poster', image: RealFlex, type: 'graphic' },
+    { title: 'Canva Poster', image: Sun, type: 'graphic' },
+    { title: 'Canva Poster', image: Loosing, type: 'graphic' },
+    { title: 'Canva Poster', image: Voice, type: 'graphic' },
   ],
   'Fusion Projects': [
     { title: 'Fusion Project 1', image: project1, type: 'fusion' },
@@ -398,7 +409,7 @@ const Projects = () => {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className={styles.projectGrid}>
+          <div className={`${styles.projectGrid} ${activeCategory === 'Graphic Designing Projects' ? styles.graphicDesignGrid : ''}`}>
             {projectData[activeCategory].map((project, idx) => (
               <motion.div
                 key={idx}
@@ -411,8 +422,12 @@ const Projects = () => {
                 onClick={() => handleShow(project)}
                 whileHover={{ scale: window.innerWidth > 768 ? 1.05 : 1 }}
               >
-                <div className={styles.projectImageContainer}>
-                  <img src={project.image || project.thumbnail} alt={project.title} className={styles.projectImage} />
+                <div className={`${styles.projectImageContainer} ${activeCategory === 'Graphic Designing Projects' ? styles.graphicDesignContainer : ''}`}>
+                  <img
+                    src={project.image || project.thumbnail}
+                    alt={project.title}
+                    className={`${styles.projectImage} ${activeCategory === 'Graphic Designing Projects' ? styles.graphicDesignImage : ''}`}
+                  />
                 </div>
               </motion.div>
             ))}

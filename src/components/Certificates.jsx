@@ -3,15 +3,23 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import KT from '../assets/KT Hatori.jpg';
 import AKDC from '../assets/AKDC.jpg';
+import Meta from '../assets/Meta.png';
 import AKDCN from '../assets/ADKCnationals.jpg';
 import styles from './Certificates.module.css';
 
 const certificatesData = [
   {
-    title: 'KT Hatori Design Challenge',
-    platform: 'National University of Sciences and Technology',
-    date: 'Dec 2023',
-    image: KT,
+    title: 'Front-End Developer Capstone',
+    platform: 'Meta',
+    date: '16 July 2025',
+    image: Meta,
+    link: 'https://coursera.org/verify/YGBV0LNCALD2',
+  },
+  {
+    title: 'Abul Kalam Design Challenge(AKDC) Nationals',
+    platform: 'ImechE Pakistan UET Taxila',
+    date: 'Jan 2025',
+    image: AKDCN,
   },
   {
     title: 'Abul Kalam Design Challenge (AKDC)',
@@ -20,34 +28,33 @@ const certificatesData = [
     image: AKDC,
   },
   {
-    title: 'Abul Kalam Design Challenge(AKDC) Nationals',
-    platform: 'ImechE Pakistan UET Taxila',
-    date: 'Jan 2025',
-    image: AKDCN,
+    title: 'KT Hatori Design Challenge',
+    platform: 'National University of Sciences and Technology',
+    date: 'Dec 2023',
+    image: KT,
   },
 ];
 
 const Certificates = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedCert, setSelectedCert] = useState(null);
 
-  const handleImageClick = (image) => {
-    setSelectedImage(image);
+  const handleImageClick = (cert) => {
+    setSelectedCert(cert);
   };
 
   const handleClose = () => {
-    setSelectedImage(null);
+    setSelectedCert(null);
   };
 
-  // Handle Esc key to close modal
   useEffect(() => {
     const handleEsc = (event) => {
-      if (event.key === 'Escape' && selectedImage) {
+      if (event.key === 'Escape' && selectedCert) {
         handleClose();
       }
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
-  }, [selectedImage]);
+  }, [selectedCert]);
 
   return (
     <section id="certificates" className={styles.certificates}>
@@ -79,7 +86,7 @@ const Certificates = () => {
                     src={cert.image}
                     alt={cert.title}
                     className={styles.certImage}
-                    onClick={() => handleImageClick(cert.image)}
+                    onClick={() => handleImageClick(cert)}
                     style={{ cursor: 'pointer' }}
                   />
                   <Card.Body>
@@ -93,7 +100,8 @@ const Certificates = () => {
           ))}
         </Row>
       </Container>
-      {selectedImage && (
+
+      {selectedCert && (
         <motion.div
           className={styles.modal}
           initial={{ opacity: 0 }}
@@ -102,12 +110,19 @@ const Certificates = () => {
           onClick={handleClose}
         >
           <motion.img
-            src={selectedImage}
+            src={selectedCert.image}
             alt="Enlarged Certificate"
             className={styles.enlargedImage}
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.3 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (selectedCert.link) {
+                window.open(selectedCert.link, '_blank', 'noopener,noreferrer');
+              }
+            }}
+            style={{ cursor: selectedCert.link ? 'pointer' : 'default' }}
           />
           <motion.button
             className={styles.closeButton}

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import KT from '../assets/KT Hatori.jpg';
 import AKDC from '../assets/AKDC.jpg';
 import Meta from '../assets/Meta.png';
+import Davinci from '../assets/Davinci.png';
 import AKDCN from '../assets/ADKCnationals.jpg';
 import styles from './Certificates.module.css';
 
@@ -14,6 +15,13 @@ const certificatesData = [
     date: '16 July 2025',
     image: Meta,
     link: 'https://coursera.org/verify/YGBV0LNCALD2',
+  },
+  {
+    title: 'DaVinci Resolve 19 Masterclass',
+    platform: 'Skillshare',
+    date: '04 August 2025',
+    image: Davinci,
+    link: 'https://coursera.org/verify/YOZJ85RJGM9F',
   },
   {
     title: 'Abul Kalam Design Challenge(AKDC) Nationals',

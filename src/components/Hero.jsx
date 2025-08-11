@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import profileImage from '../assets/profile.jpg';
+import pic from '../assets/picc.png';
 import styles from './Hero.module.css';
 
 const Hero = () => {

@@ -4,11 +4,19 @@ import { motion } from 'framer-motion';
 import KT from '../assets/KT Hatori.jpg';
 import AKDC from '../assets/AKDC.jpg';
 import Meta from '../assets/Meta.png';
-import Davinci from '../assets/Davinci.png';
+import DavinciSpecialization from '../assets/DavinciSpecialization.png';
+import Davinci2 from '../assets/Davinci2.png';
 import AKDCN from '../assets/ADKCnationals.jpg';
 import styles from './Certificates.module.css';
 
 const certificatesData = [
+  {
+    title: 'DaVinci Resolve Specialization',
+    platform: 'Skillshare',
+    date: '11 August 2025',
+    image: DavinciSpecialization,
+    link: 'https://www.coursera.org/account/accomplishments/specialization/LR8YO5Z4DU92',
+  },
   {
     title: 'Front-End Developer Capstone',
     platform: 'Meta',
@@ -16,13 +24,13 @@ const certificatesData = [
     image: Meta,
     link: 'https://coursera.org/verify/YGBV0LNCALD2',
   },
-  {
-    title: 'DaVinci Resolve 19 Masterclass',
-    platform: 'Skillshare',
-    date: '04 August 2025',
-    image: Davinci,
-    link: 'https://coursera.org/verify/YOZJ85RJGM9F',
-  },
+  // {
+  //   title: 'DaVinci Resolve 19 Masterclass: Audio and Visual Polish',
+  //   platform: 'Skillshare',
+  //   date: '05 August 2025',
+  //   image: Davinci2,
+  //   link: 'https://coursera.org/verify/GQ8UKIJFPIF9',
+  // },
   {
     title: 'Abul Kalam Design Challenge(AKDC) Nationals',
     platform: 'ImechE Pakistan UET Taxila',

@@ -5,17 +5,24 @@ import KT from '../assets/KT Hatori.jpg';
 import AKDC from '../assets/AKDC.jpg';
 import Meta from '../assets/Meta.png';
 import DavinciSpecialization from '../assets/DavinciSpecialization.png';
-import Davinci2 from '../assets/Davinci2.png';
+import AdvancedExcel from '../assets/AdvancedExcel.png';
 import AKDCN from '../assets/ADKCnationals.jpg';
 import styles from './Certificates.module.css';
 
 const certificatesData = [
   {
+    title: 'Excel Skills for Business: Advanced',
+    platform: 'Macquarie University',
+    date: '12 August 2025',
+    image: AdvancedExcel,
+    link: 'https://coursera.org/verify/PP497WICGF6U',
+  },
+  {
     title: 'DaVinci Resolve Specialization',
     platform: 'Skillshare',
     date: '11 August 2025',
     image: DavinciSpecialization,
-    link: 'https://www.coursera.org/account/accomplishments/specialization/LR8YO5Z4DU92',
+    link: 'https://coursera.org/verify/specialization/LR8YO5Z4DU92',
   },
   {
     title: 'Front-End Developer Capstone',
@@ -24,13 +31,6 @@ const certificatesData = [
     image: Meta,
     link: 'https://coursera.org/verify/YGBV0LNCALD2',
   },
-  // {
-  //   title: 'DaVinci Resolve 19 Masterclass: Audio and Visual Polish',
-  //   platform: 'Skillshare',
-  //   date: '05 August 2025',
-  //   image: Davinci2,
-  //   link: 'https://coursera.org/verify/GQ8UKIJFPIF9',
-  // },
   {
     title: 'Abul Kalam Design Challenge(AKDC) Nationals',
     platform: 'ImechE Pakistan UET Taxila',

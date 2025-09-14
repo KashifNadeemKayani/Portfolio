@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import KT from '../assets/KT Hatori.jpg';
+import TripToLahore from '../assets/TripToLahore.jpg';
+import Cricket from '../assets/Cricket.jpg';
+import BasketBall from '../assets/BasketBall.jpg';
+import Futsal from '../assets/Futsal.jpg';
 import AKDC from '../assets/AKDC.jpg';
 import Meta from '../assets/Meta.png';
 import DavinciSpecialization from '../assets/DavinciSpecialization.png';
@@ -48,6 +52,30 @@ const certificatesData = [
     platform: 'National University of Sciences and Technology',
     date: 'Dec 2023',
     image: KT,
+  },
+  {
+    title: 'Organizing a Trip to Lahore',
+    platform: 'PakTurk Maarif International Schools & Colleges',
+    date: 'Feb 2023',
+    image: TripToLahore,
+  },
+  {
+    title: 'Cricket Tournament',
+    platform: 'PakTurk Maarif International Schools & Colleges',
+    date: '24-26 Nov 2022',
+    image: Cricket,
+  },
+  {
+    title: 'Best Basketball Player',
+    platform: 'PakTurk Maarif International Schools & Colleges',
+    date: '23 Sep 2022',
+    image: BasketBall,
+  },
+  {
+    title: 'Futsal Tournament',
+    platform: 'PakTurk Maarif International Schools & Colleges',
+    date: '28 Oct 2022',
+    image: Futsal,
   },
 ];
 

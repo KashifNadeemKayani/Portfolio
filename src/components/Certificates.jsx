@@ -15,6 +15,13 @@ import styles from './Certificates.module.css';
 
 const certificatesData = [
   {
+    title: 'Introduction to Prpgramming with MATLAB',
+    platform: 'Vanderbilt University',
+    date: '30 September 2025',
+    image: AdvancedExcel,
+    link: 'https://coursera.org/share/a0975f24b358deca5209ee37dbf6cd12',
+  },
+  {
     title: 'Excel Skills for Business: Advanced',
     platform: 'Macquarie University',
     date: '12 August 2025',

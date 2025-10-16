@@ -15,7 +15,7 @@ import styles from './Certificates.module.css';
 
 const certificatesData = [
   {
-    title: 'Introduction to Prpgramming with MATLAB',
+    title: 'Introduction to Programming with MATLAB',
     platform: 'Vanderbilt University',
     date: '30 September 2025',
     image: AdvancedExcel,

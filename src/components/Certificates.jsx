@@ -10,16 +10,41 @@ import AKDC from '../assets/AKDC.jpg';
 import Meta from '../assets/Meta.png';
 import DavinciSpecialization from '../assets/DavinciSpecialization.png';
 import AdvancedExcel from '../assets/AdvancedExcel.png';
+import MaterMatlab from '../assets/MaterMatlab.png';
+import IntroMatlab from '../assets/IntroMatlab.png';
+import SW_3D from '../assets/SW_3D.png';
+import SW_xDesign from '../assets/SW_xDesign.png';
 import AKDCN from '../assets/ADKCnationals.jpg';
 import styles from './Certificates.module.css';
 
 const certificatesData = [
   {
+    title: 'SOLIDWORKS xDesign for Education',
+    platform: 'Dassault Systemes',
+    date: '16 December 2025',
+    image: SW_xDesign,
+    link: 'https://coursera.org/verify/specialization/T1ILBFOJZ870',
+  },
+  {
+    title: 'SOLIDWORKS 3D CAD for Education',
+    platform: 'Dassault Systemes',
+    date: '15 December 2025',
+    image: SW_3D,
+    link: 'https://coursera.org/verify/specialization/41PTEUT88DMW',
+  },
+  {
     title: 'Introduction to Programming with MATLAB',
     platform: 'Vanderbilt University',
     date: '30 September 2025',
-    image: AdvancedExcel,
+    image: IntroMatlab,
     link: 'https://coursera.org/share/a0975f24b358deca5209ee37dbf6cd12',
+  },
+  {
+    title: 'Mastering Programming with MATLAB',
+    platform: 'Vanderbilt University',
+    date: '28 Nov 2025',
+    image: MaterMatlab,
+    link: 'https://coursera.org/verify/ZKZZRMED82C6',
   },
   {
     title: 'Excel Skills for Business: Advanced',

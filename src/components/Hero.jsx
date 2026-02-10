@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+// import profileImage from '../assets/Pic.png';
 import profileImage from '../assets/ppic.png';
 import pic from '../assets/picc.png';
 import styles from './Hero.module.css';

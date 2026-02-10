@@ -34,7 +34,7 @@ const Hero = () => {
             >
               <h1 className={styles.title}>Assalamualaikum, I'm Kashif Nadeem Kayani</h1>
               <p className={styles.description}>
-                A Mechanical Engineer by profession | MERN Stack & WordPress developer | a creative graphic designer, and a specialist in Fusion and DaVinci Resolve.
+                A Mechanical Engineer by profession |A Specialist in Solidworks | MERN Stack  developer | a creative graphic designer, and a specialist in Fusion and DaVinci Resolve.
               </p>
             </motion.div>
           </Col>

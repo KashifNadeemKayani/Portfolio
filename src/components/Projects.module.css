@@ -1,4 +1,6 @@
-/* Base layout and global styles */
+/* ============================================================
+   BASE LAYOUT
+   ============================================================ */
 .projects {
   min-height: 100vh;
   padding: 5rem 0;
@@ -22,7 +24,9 @@
   margin: 0 auto;
 }
 
-/* Category slider and buttons */
+/* ============================================================
+   CATEGORY SLIDER
+   ============================================================ */
 .categorySlider {
   display: flex;
   overflow-x: auto;
@@ -33,10 +37,7 @@
   padding: 5px 0;
   scrollbar-width: none;
 }
-
-.categorySlider::-webkit-scrollbar {
-  display: none;
-}
+.categorySlider::-webkit-scrollbar { display: none; }
 
 .categoryButton {
   background: transparent;
@@ -50,64 +51,35 @@
   white-space: nowrap;
   position: relative;
   outline: none;
-  /* Remove default outline */
 }
-
-.categoryButton:focus {
-  outline: none;
-  /* Remove focus outline */
-  box-shadow: none;
-  /* Remove any shadow */
-}
-
-.categoryButton:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-}
-
-.activeCategory {
-  background: #e0a725;
-  color: #000000;
-  font-weight: 700;
-}
-
-.disabledCategory {
-  color: #a0a0a0;
-  cursor: not-allowed !important;
-  opacity: 0.6;
-}
-
-.disabledCategory:hover {
-  background: transparent;
-  color: #a0a0a0;
-}
-
+.categoryButton:focus  { outline: none; box-shadow: none; }
+.categoryButton:hover  { background: rgba(255,255,255,0.2); color: #fff; }
+.activeCategory        { background: #e0a725; color: #000000; font-weight: 700; }
+.disabledCategory      { color: #a0a0a0; cursor: not-allowed !important; opacity: 0.6; }
+.disabledCategory:hover { background: transparent; color: #a0a0a0; }
 .disabledCategory:hover::after {
   content: '✖';
   color: #ff0000;
   font-size: 1.2em;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
 
-/* Project grid and items */
+/* ============================================================
+   PROJECT GRID
+   ============================================================ */
 .projectGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* Default for other categories */
   gap: 20px;
   width: 100%;
   padding: 20px 0;
   justify-items: center;
 }
-
-.projectGrid.graphicDesignGrid {
-  grid-template-columns: repeat(5, 1fr);
-  /* 4 columns for Graphic Designing Projects on PC and above 768px */
-}
+.projectGrid.graphicDesignGrid { grid-template-columns: repeat(5, 1fr); }
+.projectGrid.engineeringGrid   { grid-template-columns: repeat(3, 1fr); }
 
 .projectItem {
   cursor: pointer;
@@ -119,9 +91,7 @@
 
 .projectImageContainer {
   width: 100%;
-  /* Full width of parent */
   height: auto;
-  /* Dynamic height based on image */
   background: #1a1a1a;
   display: flex;
   align-items: center;
@@ -130,51 +100,75 @@
   border-radius: 10px;
   margin-bottom: 0;
 }
+.projectImageContainer.graphicDesignContainer { background: transparent; }
 
-.projectImageContainer.graphicDesignContainer {
-  background: transparent;
-  /* Remove black borders for Graphic Designing Projects */
+.projectImage           { width: 100%; height: auto; object-fit: contain; }
+.graphicDesignContainer { max-height: 250px; }
+.graphicDesignImage     { max-height: 250px; width: 100%; object-fit: contain; }
+
+/* ============================================================
+   HOVER CARD  (engineering + web-dev cards)
+   Reusable dark-overlay card; overlay text differs per type.
+   ============================================================ */
+.hoverCard {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  line-height: 0;           /* collapse whitespace beneath <img> */
 }
 
-.projectImage {
+.hoverCard img {
   width: 100%;
-  /* Fill container width */
   height: auto;
-  /* Maintain aspect ratio */
+  display: block;
   object-fit: contain;
-  /* Scale proportionally without distortion */
+  transition: transform 0.35s ease;
 }
 
-.projectImage.graphicDesignImage {
-  /* No change to height, just ensure it fits without borders */
+.hoverCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
 }
 
-/* Specific styles for Graphic Designing Projects */
-.graphicDesignContainer {
-  max-height: 250px;
-  /* Reduced height for graphic design projects on PC */
+.hoverCard:hover .hoverCardOverlay { opacity: 1; }
+.hoverCard:hover img               { transform: scale(1.05); }
+
+.hoverCardOverlayText {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 0 1rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  pointer-events: none;
 }
 
-.graphicDesignImage {
-  max-height: 250px;
-  /* Match container height on PC */
-  width: 100%;
-  object-fit: contain;
-  /* Ensure image is not cropped */
-}
+/* Legacy alias — kept so any existing refs still compile */
+.engCardOuter   { /* no extra rules needed */ }
+.engCardWrapper { /* alias to .hoverCard — see JSX */ }
 
-/* Enlarged view and close button */
+/* ============================================================
+   STANDARD MODAL  (graphic / video)
+   ============================================================ */
 .customEnlargedView {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  touch-action: none;
+  overscroll-behavior: none;
 }
 
 .enlargedContent {
@@ -199,10 +193,8 @@
 
 .closeButton {
   position: fixed;
-  top: 40px;
-  right: 40px;
-  width: 50px;
-  height: 50px;
+  top: 40px; right: 40px;
+  width: 50px; height: 50px;
   background: linear-gradient(135deg, #ff37ea, #8637ff);
   border: none;
   border-radius: 50%;
@@ -213,217 +205,218 @@
   align-items: center;
   justify-content: center;
   z-index: 1003;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.closeButton:hover { background: linear-gradient(135deg, #8637ff, #ff37ea); color: #e0a725; }
+
+/* ============================================================
+   ENGINEERING MODAL
+   ──────────────────────────────────────────────────────────
+   .engModalContent  — overrides .enlargedContent
+     └─ .engModal  (flex col, 100% h)
+          ├─ .engModalImageWrap  (flex:1, overflow:hidden, position:relative)
+          │    ├─ img.engModalImg  (100% w/h, object-fit:contain)
+          │    └─ .engModalOverlayPanel  (absolute, bottom:0, slides up)
+          └─ .engModalCaption  (flex-shrink:0, ~64px)
+   ============================================================ */
+
+/* The wrapper that replaces .enlargedContent for engineering modals.
+   MUST have an explicit height so .engModalImageWrap can flex-grow into it. */
+.engModalContent {
+  /* 88 vw wide, explicit height = 88 vh so the image wrap has room to fill */
+  width:      88vw;
+  max-width:  1200px;
+  height:     88vh;          /* ← explicit height — this is the key fix */
+  max-height: 88vh;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
 }
 
-.closeButton:hover {
+/* Outer flex-column container that fills .engModalContent */
+.engModal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;              /* fill the fixed-height parent */
+}
+
+/* Image area — grows to fill everything except the caption bar */
+.engModalImageWrap {
+  position: relative;        /* anchor for the absolute overlay panel */
+  flex: 1 1 0;               /* grow, shrink, basis-0 → fills leftover height */
+  min-height: 0;             /* allow shrinking below content size in flex */
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+/* The actual image — fills the wrap completely */
+.engModalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* show the full image, no cropping */
+  display: block;
+}
+
+/* Frosted description panel — absolutely positioned at the bottom of the
+   image wrap; slides UP over the image when See More is clicked */
+.engModalOverlayPanel {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  max-height: 78%;           /* never covers more than 78% of the image */
+  background: rgba(8, 3, 18, 0.90);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(134, 55, 255, 0.4);
+  padding: 1.4rem 1.8rem 1.6rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;           /* whole panel clickable to collapse */
+}
+.engModalOverlayPanel::-webkit-scrollbar       { width: 4px; }
+.engModalOverlayPanel::-webkit-scrollbar-thumb { background: #8637ff; border-radius: 4px; }
+
+.engModalFullDesc {
+  font-size: 0.97rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Caption bar — sits flush under the image, never moves */
+.engModalCaption {
+  flex-shrink: 0;            /* never shrink — always 64px tall */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.4rem;
+  min-height: 64px;
+  background: #1a1a1a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.engModalShortDesc {
+  flex: 1;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cccccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   SEE MORE / SHOW LESS BUTTON  (shared)
+   ============================================================ */
+.seeMoreBtn {
+  flex-shrink: 0;
   background: linear-gradient(135deg, #8637ff, #ff37ea);
-  color: #e0a725;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  outline: none;
+  letter-spacing: 0.02em;
+  align-self: flex-end;
 }
+.seeMoreBtn:hover { opacity: 0.82; transform: translateY(-1px); }
+.seeMoreBtn:focus { outline: none; box-shadow: 0 0 0 3px rgba(134,55,255,0.4); }
 
-/* Mobile-specific adjustments */
+/* ============================================================
+   MOBILE  (≤ 768 px)
+   ============================================================ */
 @media (max-width: 768px) {
   .projects {
     overflow-x: hidden;
-    width: 100%;
-    min-height: 100vh;
-    max-width: 100%;
+    width: 100%; max-width: 100%;
     padding: 60px 0 2rem;
     display: block;
     min-height: auto;
   }
+  .sectionTitle { font-size: 2rem; }
+  .categorySlider { padding: 5px; }
+  .categoryButton { padding: 8px 15px; margin: 0 3px; }
+  .categoryButton:hover { background: #e0a725; color: #000; font-weight: 700; }
+  .activeCategory       { background: #e0a725; color: #000; font-weight: 700; }
 
-  .sectionTitle {
-    font-size: 2rem;
-  }
+  .projectGrid                   { grid-template-columns: 1fr;           gap: 15px; }
+  .projectGrid.graphicDesignGrid { grid-template-columns: repeat(3,1fr); }
+  .projectGrid.engineeringGrid   { grid-template-columns: 1fr; }
 
-  .categorySlider {
-    padding: 5px;
-  }
+  .projectItem           { width: 100%; max-width: 100%; }
+  .projectImageContainer { width:100%; height:auto; background:#1a1a1a;
+                           display:flex; align-items:center; justify-content:center;
+                           overflow:hidden; border-radius:10px; margin-bottom:0; }
+  .projectImageContainer.graphicDesignContainer { background: transparent; }
+  .projectImage          { width:100%; height:auto; object-fit:contain; }
+  .graphicDesignContainer{ max-height:150px; }
+  .graphicDesignImage    { max-height:150px; width:100%; object-fit:contain; }
 
-  .categoryButton {
-    padding: 8px 15px;
-    margin: 0 3px;
-  }
+  .customEnlargedView { width:100%; height:100%; }
 
-  .categoryButton:hover {
-    background: #e0a725;
-    /* Match activeCategory background */
-    color: #000000;
-    /* Match activeCategory color */
-    font-weight: 700;
-    /* Match activeCategory font-weight */
-  }
-
-  .activeCategory {
-    background: #e0a725;
-    color: #000000;
-    font-weight: 700;
-  }
-
-  .projectGrid {
-    grid-template-columns: 1fr;
-    /* Default for other categories on mobile */
-    gap: 15px;
-  }
-
-  .projectGrid.graphicDesignGrid {
-    grid-template-columns: repeat(3, 1fr);
-    /* 2 columns for Graphic Designing Projects on mobile */
-  }
-
-  .projectItem {
-    width: 100%;
-    max-width: 100%;
-    /* Allow full width */
-  }
-
-  .projectImageContainer {
-    width: 100%;
-    /* Full width of parent */
-    height: auto;
-    /* Dynamic height based on image */
-    background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 0;
-  }
-
-  .projectImageContainer.graphicDesignContainer {
-    background: transparent;
-    /* Remove black borders for Graphic Designing Projects on mobile */
-  }
-
-  .projectImage {
-    width: 100%;
-    /* Fill container width */
-    height: auto;
-    /* Maintain aspect ratio */
-    object-fit: contain;
-    /* Scale proportionally without distortion */
-  }
-
-  .graphicDesignContainer {
-    max-height: 150px;
-    /* Reduced height for graphic design projects on mobile */
-  }
-
-  .graphicDesignImage {
-    max-height: 150px;
-    /* Match container height on mobile */
-    width: 100%;
-    object-fit: contain;
-    /* Ensure image is not cropped */
-  }
-
-  .customEnlargedView {
-    width: 100%;
-    height: 100%;
-  }
-
+  /* Standard modal (graphic) */
   .enlargedContent {
-    width: 90vw;
-    height: 70vh;
+    width: 90vw; height: 70vh;
     background: transparent;
-    margin: 0 20px;
-    max-height: 70vh;
+    margin: 0 20px; max-height: 70vh;
   }
 
-  .closeButton {
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-  }
+  .closeButton { width:30px; height:30px; font-size:20px; top:15px; right:15px; }
 
-  .disabledCategory:hover {
-    content: none;
-    color: #a0a0a0;
-    background: transparent;
-  }
+  .disabledCategory:hover        { color:#a0a0a0; background:transparent; }
+  .disabledCategory:hover::after { content:none; }
 
-  .disabledCategory:hover::after {
-    content: none;
-    background: transparent;
-  }
-}
+  /* Hover card overlay text — smaller on mobile */
+  .hoverCardOverlayText { font-size: 0.85rem; }
 
-/* Landscape-specific fix for mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-  .projects {
-    padding: 1rem 0;
-    min-height: 50vh;
-  }
-
-  .projectGrid {
-    grid-template-columns: repeat(2, 1fr);
-    /* Default for other categories on landscape mobile */
-    gap: 10px;
-  }
-
-  .projectGrid.graphicDesignGrid {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 columns for Graphic Designing Projects on landscape mobile */
-  }
-
-  .projectItem {
-    width: 100%;
-    max-width: 100%;
-    /* Allow full width */
-  }
-
-  .projectImageContainer {
-    width: 100%;
-    /* Full width of parent */
-    height: auto;
-    /* Dynamic height based on image */
-    background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  /* Engineering modal on mobile — full viewport height */
+  .engModalContent {
+    width:      96vw;
+    height:     88vh;          /* explicit height works on mobile too */
+    max-height: 88vh;
     border-radius: 10px;
-    margin-bottom: 0;
   }
 
-  .projectImageContainer.graphicDesignContainer {
-    background: transparent;
-    /* Remove black borders for Graphic Designing Projects on landscape */
+  .engModalOverlayPanel {
+    padding: 1rem;
+    max-height: 72%;
   }
-
-  .projectImage {
-    width: 100%;
-    /* Fill container width */
-    height: auto;
-    /* Maintain aspect ratio */
-    object-fit: contain;
-    /* Scale proportionally without distortion */
-  }
-
-  .graphicDesignContainer {
-    max-height: 200px;
-    /* Reduced height for graphic design projects on landscape */
-  }
-
-  .graphicDesignImage {
-    max-height: 200px;
-    /* Match container height on landscape */
-    width: 100%;
-    object-fit: contain;
-    /* Ensure image is not cropped */
-  }
-
-  .categorySlider {
-    padding: 0;
-    width: 100%;
-  }
+  .engModalFullDesc  { font-size: 0.875rem; }
+  .engModalCaption   { padding: 0 0.9rem; min-height: 56px; }
+  .engModalShortDesc { font-size: 0.82rem; }
+  .seeMoreBtn        { font-size: 0.78rem; padding: 0.38rem 0.85rem; }
 }
 
-/* New class to disable scrolling */
-.no-scroll {
-  overflow: hidden;
-  height: 100%;
-  /* Prevent page jump */
+/* ============================================================
+   LANDSCAPE MOBILE  (≤ 768 px, landscape)
+   ============================================================ */
+@media (max-width: 768px) and (orientation: landscape) {
+  .projects { padding: 1rem 0; min-height: 50vh; }
+
+  .projectGrid                   { grid-template-columns: repeat(2,1fr); gap:10px; }
+  .projectGrid.graphicDesignGrid { grid-template-columns: repeat(2,1fr); }
+  .projectGrid.engineeringGrid   { grid-template-columns: repeat(2,1fr); }
+
+  .projectItem { width:100%; max-width:100%; }
+  .projectImageContainer { width:100%; height:auto; background:#1a1a1a;
+                           display:flex; align-items:center; justify-content:center;
+                           overflow:hidden; border-radius:10px; margin-bottom:0; }
+  .projectImageContainer.graphicDesignContainer { background:transparent; }
+  .projectImage { width:100%; height:auto; object-fit:contain; }
+  .graphicDesignContainer { max-height:200px; }
+  .graphicDesignImage     { max-height:200px; width:100%; object-fit:contain; }
+  .categorySlider { padding:0; width:100%; }
+
+  .engModalContent { width:90vw; height:82vh; max-height:82vh; }
 }

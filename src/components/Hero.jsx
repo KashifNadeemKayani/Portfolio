@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 // import profileImage from '../assets/Pic.png';
-import profileImage from '../assets/ppic.png';
+import profileImage from '../assets/PIC.png';
 import pic from '../assets/picc.png';
 import styles from './Hero.module.css';
 
@@ -34,7 +34,7 @@ const Hero = () => {
             >
               <h1 className={styles.title}>Assalamualaikum, I'm Kashif Nadeem Kayani</h1>
               <p className={styles.description}>
-                A Mechanical Engineer by profession |A Specialist in Solidworks | MERN Stack  developer | a creative graphic designer, and a specialist in Fusion and DaVinci Resolve.
+                A Mechanical Engineer by profession | A Specialist in Solidworks, Ansys, Matlab, Excel | Front end developer | a creative graphic designer, and a specialist in DaVinci Resolve.
               </p>
             </motion.div>
           </Col>

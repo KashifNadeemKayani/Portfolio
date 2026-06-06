@@ -107,29 +107,25 @@
 .graphicDesignImage     { max-height: 250px; width: 100%; object-fit: contain; }
 
 /* ============================================================
-   HOVER CARD  (engineering + web-dev cards)
-   Reusable dark-overlay card; overlay text differs per type.
+   HOVER CARD  (engineering + web-dev thumbnail cards)
    ============================================================ */
 .hoverCard {
   position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  line-height: 0;           /* collapse whitespace beneath <img> */
+  line-height: 0;
 }
-
 .hoverCard img {
-  width: 100%;
-  height: auto;
+  width: 100%; height: auto;
   display: block;
   object-fit: contain;
   transition: transform 0.35s ease;
 }
-
 .hoverCardOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.58);
+  background: rgba(0,0,0,0.58);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,10 +133,8 @@
   transition: opacity 0.3s ease;
   border-radius: 10px;
 }
-
 .hoverCard:hover .hoverCardOverlay { opacity: 1; }
 .hoverCard:hover img               { transform: scale(1.05); }
-
 .hoverCardOverlayText {
   color: #fff;
   font-weight: 700;
@@ -152,9 +146,9 @@
   pointer-events: none;
 }
 
-/* Legacy alias — kept so any existing refs still compile */
-.engCardOuter   { /* no extra rules needed */ }
-.engCardWrapper { /* alias to .hoverCard — see JSX */ }
+/* Legacy aliases */
+.engCardOuter   {}
+.engCardWrapper {}
 
 /* ============================================================
    STANDARD MODAL  (graphic / video)
@@ -162,7 +156,7 @@
 .customEnlargedView {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,10 +164,8 @@
   touch-action: none;
   overscroll-behavior: none;
 }
-
 .enlargedContent {
-  width: 75vw;
-  height: 75vh;
+  width: 75vw; height: 75vh;
   background: transparent;
   display: flex;
   align-items: center;
@@ -183,100 +175,172 @@
   margin: 0 20px;
   max-height: 75vh;
 }
-
 .enlargedImage {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: contain;
   background: transparent;
 }
-
 .closeButton {
   position: fixed;
   top: 40px; right: 40px;
   width: 50px; height: 50px;
   background: linear-gradient(135deg, #ff37ea, #8637ff);
-  border: none;
-  border-radius: 50%;
-  color: #f7b731;
-  font-size: 30px;
+  border: none; border-radius: 50%;
+  color: #f7b731; font-size: 30px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   z-index: 1003;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 .closeButton:hover { background: linear-gradient(135deg, #8637ff, #ff37ea); color: #e0a725; }
 
 /* ============================================================
-   ENGINEERING MODAL
-   ──────────────────────────────────────────────────────────
-   .engModalContent  — overrides .enlargedContent
-     └─ .engModal  (flex col, 100% h)
-          ├─ .engModalImageWrap  (flex:1, overflow:hidden, position:relative)
-          │    ├─ img.engModalImg  (100% w/h, object-fit:contain)
-          │    └─ .engModalOverlayPanel  (absolute, bottom:0, slides up)
-          └─ .engModalCaption  (flex-shrink:0, ~64px)
+   ENGINEERING MODAL SHELL
    ============================================================ */
-
-/* The wrapper that replaces .enlargedContent for engineering modals.
-   MUST have an explicit height so .engModalImageWrap can flex-grow into it. */
 .engModalContent {
-  /* 88 vw wide, explicit height = 88 vh so the image wrap has room to fill */
-  width:      88vw;
-  max-width:  1200px;
-  height:     88vh;          /* ← explicit height — this is the key fix */
+  width: 88vw;
+  max-width: 1200px;
+  height: 88vh;
   max-height: 88vh;
-  background: #111;
+  background: transparent;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   align-items: stretch;
   padding: 0;
 }
-
-/* Outer flex-column container that fills .engModalContent */
 .engModal {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;              /* fill the fixed-height parent */
+  width: 100%; height: 100%;
 }
-
-/* Image area — grows to fill everything except the caption bar */
 .engModalImageWrap {
-  position: relative;        /* anchor for the absolute overlay panel */
-  flex: 1 1 0;               /* grow, shrink, basis-0 → fills leftover height */
-  min-height: 0;             /* allow shrinking below content size in flex */
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
   overflow: hidden;
-  background: #1a1a1a;
+  background: transparent;
 }
 
-/* The actual image — fills the wrap completely */
-.engModalImg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;       /* show the full image, no cropping */
+/* ============================================================
+   IMAGE CAROUSEL  (NEW)
+   ============================================================ */
+
+/* Outer container — fills .engModalImageWrap completely */
+.carousel {
+  position: relative;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ── Bold gradient title at the very top of the image ── */
+.carouselTitle {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-align: center;
+  /* Theme gradient text */
+  background: linear-gradient(90deg, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  pointer-events: none;
+}
+/* Dark scrim behind the title text */
+.carousel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 70px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%);
+  z-index: 9;
+  pointer-events: none;
+}
+
+/* ── Image wrapper — fills carousel, clips animation ── */
+.carouselImgWrap {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+.carouselImg {
+  width: 100%; height: 100%;
+  object-fit: contain;
   display: block;
 }
 
-/* Frosted description panel — absolutely positioned at the bottom of the
-   image wrap; slides UP over the image when See More is clicked */
+/* ── Arrow buttons ── */
+.carouselBtn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  z-index: 20;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(134, 55, 255, 0.75);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.carouselBtn:hover { background: rgba(134,55,255,1); transform: translateY(-50%) scale(1.1); }
+.carouselBtnLeft  { left:  14px; }
+.carouselBtnRight { right: 14px; }
+
+/* ── Dot indicators ── */
+.carouselDots {
+  position: absolute;
+  bottom: 14px; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+}
+.carouselDot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.carouselDotActive {
+  background: #c084fc;
+  transform: scale(1.35);
+}
+
+/* ============================================================
+   FROSTED DESCRIPTION OVERLAY PANEL
+   ============================================================ */
 .engModalOverlayPanel {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  max-height: 78%;           /* never covers more than 78% of the image */
-  background: rgba(8, 3, 18, 0.90);
+  max-height: 78%;
+  background: rgba(8,3,18,0.90);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(134, 55, 255, 0.4);
+  border-top: 1px solid rgba(134,55,255,0.4);
   padding: 1.4rem 1.8rem 1.6rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  cursor: pointer;           /* whole panel clickable to collapse */
+  cursor: pointer;
+  z-index: 30;
 }
 .engModalOverlayPanel::-webkit-scrollbar       { width: 4px; }
 .engModalOverlayPanel::-webkit-scrollbar-thumb { background: #8637ff; border-radius: 4px; }
@@ -288,18 +352,20 @@
   margin: 0;
 }
 
-/* Caption bar — sits flush under the image, never moves */
+/* ============================================================
+   CAPTION BAR
+   ============================================================ */
 .engModalCaption {
-  flex-shrink: 0;            /* never shrink — always 64px tall */
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0 1.4rem;
   min-height: 64px;
-  background: #1a1a1a;
+  background: rgba(20, 10, 35, 0.92);
   border-top: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0 0 12px 12px;
 }
-
 .engModalShortDesc {
   flex: 1;
   margin: 0;
@@ -312,7 +378,7 @@
 }
 
 /* ============================================================
-   SEE MORE / SHOW LESS BUTTON  (shared)
+   SEE MORE / SHOW LESS BUTTON
    ============================================================ */
 .seeMoreBtn {
   flex-shrink: 0;
@@ -354,48 +420,50 @@
   .projectGrid.graphicDesignGrid { grid-template-columns: repeat(3,1fr); }
   .projectGrid.engineeringGrid   { grid-template-columns: 1fr; }
 
-  .projectItem           { width: 100%; max-width: 100%; }
-  .projectImageContainer { width:100%; height:auto; background:#1a1a1a;
-                           display:flex; align-items:center; justify-content:center;
-                           overflow:hidden; border-radius:10px; margin-bottom:0; }
+  .projectItem { width: 100%; max-width: 100%; }
+  .projectImageContainer {
+    width:100%; height:auto; background:#1a1a1a;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden; border-radius:10px; margin-bottom:0;
+  }
   .projectImageContainer.graphicDesignContainer { background: transparent; }
-  .projectImage          { width:100%; height:auto; object-fit:contain; }
-  .graphicDesignContainer{ max-height:150px; }
-  .graphicDesignImage    { max-height:150px; width:100%; object-fit:contain; }
+  .projectImage { width:100%; height:auto; object-fit:contain; }
+  .graphicDesignContainer { max-height:150px; }
+  .graphicDesignImage     { max-height:150px; width:100%; object-fit:contain; }
 
   .customEnlargedView { width:100%; height:100%; }
-
-  /* Standard modal (graphic) */
   .enlargedContent {
     width: 90vw; height: 70vh;
     background: transparent;
     margin: 0 20px; max-height: 70vh;
   }
-
   .closeButton { width:30px; height:30px; font-size:20px; top:15px; right:15px; }
 
   .disabledCategory:hover        { color:#a0a0a0; background:transparent; }
   .disabledCategory:hover::after { content:none; }
 
-  /* Hover card overlay text — smaller on mobile */
   .hoverCardOverlayText { font-size: 0.85rem; }
 
-  /* Engineering modal on mobile — full viewport height */
+  /* Engineering modal */
   .engModalContent {
-    width:      96vw;
-    height:     88vh;          /* explicit height works on mobile too */
-    max-height: 88vh;
+    width: 96vw;
+    height: 88vh; max-height: 88vh;
     border-radius: 10px;
   }
 
-  .engModalOverlayPanel {
-    padding: 1rem;
-    max-height: 72%;
-  }
-  .engModalFullDesc  { font-size: 0.875rem; }
-  .engModalCaption   { padding: 0 0.9rem; min-height: 56px; }
-  .engModalShortDesc { font-size: 0.82rem; }
-  .seeMoreBtn        { font-size: 0.78rem; padding: 0.38rem 0.85rem; }
+  /* Carousel on mobile */
+  .carouselTitle  { font-size: 1.05rem; padding: 0.5rem 0.9rem; }
+  .carouselBtn    { width: 34px; height: 34px; font-size: 1.3rem; }
+  .carouselBtnLeft  { left:  8px; }
+  .carouselBtnRight { right: 8px; }
+  .carouselDot { width: 6px; height: 6px; }
+
+  /* Overlay panel + caption */
+  .engModalOverlayPanel { padding: 1rem; max-height: 72%; }
+  .engModalFullDesc     { font-size: 0.875rem; }
+  .engModalCaption      { padding: 0 0.9rem; min-height: 56px; }
+  .engModalShortDesc    { font-size: 0.82rem; }
+  .seeMoreBtn           { font-size: 0.78rem; padding: 0.38rem 0.85rem; }
 }
 
 /* ============================================================
@@ -409,9 +477,11 @@
   .projectGrid.engineeringGrid   { grid-template-columns: repeat(2,1fr); }
 
   .projectItem { width:100%; max-width:100%; }
-  .projectImageContainer { width:100%; height:auto; background:#1a1a1a;
-                           display:flex; align-items:center; justify-content:center;
-                           overflow:hidden; border-radius:10px; margin-bottom:0; }
+  .projectImageContainer {
+    width:100%; height:auto; background:#1a1a1a;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden; border-radius:10px; margin-bottom:0;
+  }
   .projectImageContainer.graphicDesignContainer { background:transparent; }
   .projectImage { width:100%; height:auto; object-fit:contain; }
   .graphicDesignContainer { max-height:200px; }

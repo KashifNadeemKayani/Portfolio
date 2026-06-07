@@ -960,6 +960,17 @@ import TicTacToe from '../assets/TicTacToe.jpg';
 //CFD
 import CFDPipeFlow from '../assets/CFD/CFDPipeFlow.jpg';
 
+//Robotic Arm
+import RoboticArm1 from '../assets/RoboticArm/RoboticArm1.png'; 
+import RoboticArm2 from '../assets/RoboticArm/RoboticArm2.png'; 
+import RoboticArm3 from '../assets/RoboticArm/RoboticArm3.png'; 
+import RoboticArm4 from '../assets/RoboticArm/RoboticArm4.png'; 
+import RoboticArm5 from '../assets/RoboticArm/RoboticArm5.png'; 
+import RoboticArm6 from '../assets/RoboticArm/RoboticArm6.png'; 
+import RoboticArm7 from '../assets/RoboticArm/RoboticArm7.png'; 
+import RoboticArm8 from '../assets/RoboticArm/RoboticArm8.png';
+import RoboticArm9 from '../assets/RoboticArm/RoboticArm9.png';
+
 
 // SOLIDWORKS Gearbox Assembly
 import GearBox1 from '../assets/gearbox/GearBox1.png';
@@ -1017,6 +1028,15 @@ import styles from './Projects.module.css';
 
 const projectData = {
   'SolidWorks Projects': [
+    {
+      title: 'Industrial Robotic Arm',
+      images: [RoboticArm1,RoboticArm2,RoboticArm3,RoboticArm4,RoboticArm5,RoboticArm6,RoboticArm7,RoboticArm8,RoboticArm9],   // ← replace with real imports
+      shortDescription:
+        'Multi-axis robotic arm assembly featuring articulated joints and gripper mechanism.',
+      fullDescription:
+        'This project involved the design and assembly of a multi-axis industrial robotic arm in SolidWorks consisting of a rotating base, articulated arm links, wrist assembly, gripper end-effector, and supporting structural components. Individual parts were modelled separately and assembled using appropriate mechanical mates to simulate realistic joint movement and kinematic behavior. The design incorporates multiple rotational degrees of freedom to enable positioning and object manipulation within a defined workspace while maintaining structural stability and motion continuity. Particular attention was given to component interfacing, joint alignment, assembly clearances, and manufacturability during the modelling process. The gripper mechanism was designed to demonstrate basic object-handling functionality, while the arm geometry was optimized to provide adequate reach and motion flexibility. The project demonstrates proficiency in complex assembly modelling, mechanical system integration, parametric part design, motion-oriented CAD development, and robotic mechanism design principles commonly used in industrial automation and material handling applications.',
+      type: 'solidworks',
+    },
     {
       title: 'Mechanical Gear Assembly',
       images: [GearBox1,GearBox2,GearBox3,GearBox4,GearBox5,GearBox6,GearBox7],   // ← replace with real imports

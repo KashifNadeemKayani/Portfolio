@@ -960,6 +960,17 @@ import TicTacToe from '../assets/TicTacToe.jpg';
 //CFD
 import CFDPipeFlow from '../assets/CFD/CFDPipeFlow.jpg';
 
+// Basic Projects
+import Archimedes1 from '../assets/BasicProjects/Archimedes1.png'; 
+import Archimedes2 from '../assets/BasicProjects/Archimedes2.png';
+import DrillBit from '../assets/BasicProjects/DrillBit.png';
+import Flange1 from '../assets/BasicProjects/Flange1.png'; 
+import Flange2 from '../assets/BasicProjects/Flange2.png'; 
+import RacknPinion1 from '../assets/BasicProjects/RacknPinion1.png'; 
+import RacknPinion2 from '../assets/BasicProjects/RacknPinion2.png'; 
+
+
+
 //Robotic Arm
 import RoboticArm1 from '../assets/RoboticArm/RoboticArm1.png'; 
 import RoboticArm2 from '../assets/RoboticArm/RoboticArm2.png'; 
@@ -1044,6 +1055,15 @@ const projectData = {
         'Helical gearbox assembly featuring ISO-standard gears, shafts, bearings, and housing.',
       fullDescription:
         'This project involved the design and assembly of a single-stage helical gearbox in SolidWorks using industry-standard mechanical design practices. The gearbox consists of a 13-tooth helical pinion, mating helical gear, transmission shafts, rolling-element bearings, flanges, and a split housing assembly comprising upper and lower casing components. ISO-standard helical gears were selected and integrated into the design to ensure proper meshing, efficient power transmission, and reduced noise levels compared to spur gear systems. The gearbox housing was modelled as a split casing to facilitate assembly, maintenance, and component inspection while providing adequate support for shafts and bearings. Individual components were modelled as separate parts and assembled using SolidWorks mates and alignment constraints. Particular attention was given to shaft positioning, bearing seating, gear alignment, and housing clearances to ensure smooth operation and accurate power transmission. Interference detection and assembly validation tools were used to verify component compatibility and eliminate potential collisions.The project demonstrates proficiency in mechanical power transmission design, assembly modelling, housing design, bearing integration, and engineering documentation. Detailed part models, assemblies, and manufacturing-oriented designs were developed to reflect real-world gearbox construction practices commonly used in industrial machinery and power transmission systems.',
+      type: 'solidworks',
+    },
+    {
+      title: 'Basic Solidworks Projects',
+      images: [Flange1, Flange2, Archimedes1, Archimedes2, DrillBit, RacknPinion1, RacknPinion2],   // ← replace with real imports
+      shortDescription:
+        'Collection of fundamental mechanical components modelled using SolidWorks design techniques.',
+      fullDescription:
+        'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, and rack-and-pinion mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
       type: 'solidworks',
     },
     {

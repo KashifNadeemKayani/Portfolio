@@ -968,6 +968,9 @@ import Flange1 from '../assets/BasicProjects/Flange1.png';
 import Flange2 from '../assets/BasicProjects/Flange2.png'; 
 import RacknPinion1 from '../assets/BasicProjects/RacknPinion1.png'; 
 import RacknPinion2 from '../assets/BasicProjects/RacknPinion2.png'; 
+import SciissorLift1 from '../assets/BasicProjects/SciissorLift1.png';
+import SciissorLift2 from '../assets/BasicProjects/SciissorLift2.png';
+import SciissorLift3 from '../assets/BasicProjects/SciissorLift3.png';
 
 
 
@@ -1059,11 +1062,11 @@ const projectData = {
     },
     {
       title: 'Basic Solidworks Projects',
-      images: [Flange1, Flange2, Archimedes1, Archimedes2, DrillBit, RacknPinion1, RacknPinion2],   // ← replace with real imports
+      images: [Flange1, Flange2, Archimedes1, Archimedes2, DrillBit, RacknPinion1, RacknPinion2, SciissorLift1, SciissorLift2, SciissorLift3      ],   // ← replace with real imports
       shortDescription:
         'Collection of fundamental mechanical components modelled using SolidWorks design techniques.',
       fullDescription:
-        'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, and rack-and-pinion mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
+        'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, rack-and-pinion mechanism and scissor lift mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
       type: 'solidworks',
     },
     {

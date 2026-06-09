@@ -957,6 +957,19 @@ import project1 from '../assets/CV.jpg';
 import Reliable from '../assets/Reliable.jpg';
 import TicTacToe from '../assets/TicTacToe.jpg';
 
+
+//Thumbnails 
+import ThumbnailBasicProjects from '../assets/Thumbnails/ThumbnailBasicProjects.png';
+import ThumbnailCFD from '../assets/Thumbnails/ThumbnailCFD.png';
+import ThumbnailCrankSlider from '../assets/Thumbnails/ThumbnailCrankSlider.png';
+import ThumbnailCup from '../assets/Thumbnails/ThumbnailCup.png';
+import ThumbnailGearBox from '../assets/Thumbnails/ThumbnailGearBox.png';
+import ThumbnailRamp from '../assets/Thumbnails/ThumbnailRamp.png';
+import ThumbnailRoboticArm from '../assets/Thumbnails/ThumbnailRoboticArm.png';
+import ThumbnailRockerArm from '../assets/Thumbnails/ThumbnailRockerArm.png';
+
+
+
 //CFD
 import CFDPipeFlow from '../assets/CFD/CFDPipeFlow.jpg';
 
@@ -1051,11 +1064,13 @@ import styles from './Projects.module.css';
 // this single source of truth automatically.
 // =============================================================================
 
+
 const projectData = {
   'SolidWorks Projects': [
     {
       title: 'Industrial Robotic Arm',
-      images: [RoboticArm1,RoboticArm2,RoboticArm3,RoboticArm4,RoboticArm5,RoboticArm6,RoboticArm7,RoboticArm8,RoboticArm9],   // ← replace with real imports
+      thumbnail: ThumbnailRoboticArm,
+      images: [RoboticArm1,RoboticArm2,RoboticArm3,RoboticArm4,RoboticArm5,RoboticArm6,RoboticArm7,RoboticArm8,RoboticArm9],
       shortDescription:
         'Multi-axis robotic arm assembly featuring articulated joints and gripper mechanism.',
       fullDescription:
@@ -1064,7 +1079,8 @@ const projectData = {
     },
     {
       title: 'Mechanical Gear Assembly',
-      images: [GearBox1,GearBox2,GearBox3,GearBox4,GearBox5,GearBox6,GearBox7],   // ← replace with real imports
+      thumbnail: ThumbnailGearBox,
+      images: [GearBox1,GearBox2,GearBox3,GearBox4,GearBox5,GearBox6,GearBox7],
       shortDescription:
         'Helical gearbox assembly featuring ISO-standard gears, shafts, bearings, and housing.',
       fullDescription:
@@ -1073,7 +1089,8 @@ const projectData = {
     },
     {
       title: 'Manual Rocker Arm Punching Machine',
-      images: [ManualRockerArmPunchingMachine1, ManualRockerArmPunchingMachine2, ManualRockerArmPunchingMachine3, ManualRockerArmPunchingMachine4, ManualRockerArmPunchingMachine5, ManualRockerArmPunchingMachine6, ManualRockerArmPunchingMachine7, ManualRockerArmPunchingMachine8],   // ← replace with real imports
+      thumbnail: ThumbnailRockerArm,
+      images: [ManualRockerArmPunchingMachine1, ManualRockerArmPunchingMachine2, ManualRockerArmPunchingMachine3, ManualRockerArmPunchingMachine4, ManualRockerArmPunchingMachine5, ManualRockerArmPunchingMachine6, ManualRockerArmPunchingMachine7, ManualRockerArmPunchingMachine8],
       shortDescription:
         'Manually actuated punching machine designed using rocker arm linkage mechanism.',
       fullDescription:
@@ -1081,16 +1098,8 @@ const projectData = {
       type: 'solidworks',
     },
     {
-      title: 'Basic Solidworks Projects',
-      images: [Flange1, Flange2, Archimedes1, Archimedes2, DrillBit, RacknPinion1, RacknPinion2, SciissorLift1, SciissorLift2, SciissorLift3      ],   // ← replace with real imports
-      shortDescription:
-        'Collection of fundamental mechanical components modelled using SolidWorks design techniques.',
-      fullDescription:
-        'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, rack-and-pinion mechanism and scissor lift mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
-      type: 'solidworks',
-    },
-    {
       title: 'SMME Piston Cup Ramp',
+      thumbnail: ThumbnailRamp,
       images: [SPCRamp1, SPCRamp2],
       shortDescription:
         'Weldment-based inspection ramp designed for SMME Piston Cup vehicles.',
@@ -1100,6 +1109,7 @@ const projectData = {
     },
     {
       title: 'Crank-Slider Mechanism',
+      thumbnail: ThumbnailCrankSlider,
       images: [SWCrankSlider1, SWCrankSlider2, SWCrankSlider3],
       shortDescription:
         'Parametric crank-slider mechanism with motion analysis and interference validation.',
@@ -1109,6 +1119,7 @@ const projectData = {
     },
     {
       title: 'Ergonomic Cup Design',
+      thumbnail: ThumbnailCup,
       images: [SWCup1, SWCup2, SWCup3],
       shortDescription:
         'Parametric cup model developed using advanced SolidWorks surface and solid modelling.',
@@ -1116,16 +1127,27 @@ const projectData = {
         'This project involved the design and modelling of an ergonomic cup in SolidWorks using a combination of solid modelling and feature-based design techniques. The geometry incorporates a tapered body profile, smooth curvature transitions, integrated handle design, and a stable base configuration to achieve both functional and aesthetic objectives. Features including Revolve, Extrude, Fillet, Shell, and Sweep operations were utilized to create the final model while maintaining dimensional consistency and design intent throughout the development process. Particular attention was given to wall thickness distribution, handle attachment geometry, manufacturability, and stress concentration reduction through smooth transitions and rounded edges. The model was developed using parametric design principles, enabling efficient modification of dimensions and geometry without rebuilding the entire part. The project demonstrates proficiency in consumer product modelling, feature management, design-for-manufacturing considerations, and CAD-based product development commonly applied in industrial design, rapid prototyping, and consumer goods engineering.',
       type: 'solidworks',
     },
+    {
+      title: 'Basic Solidworks Projects',
+      thumbnail: ThumbnailBasicProjects,
+      images: [Flange1, Flange2, Archimedes1, Archimedes2, DrillBit, RacknPinion1, RacknPinion2, SciissorLift1, SciissorLift2, SciissorLift3],
+      shortDescription:
+        'Collection of fundamental mechanical components modelled using SolidWorks design techniques.',
+      fullDescription:
+        'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, rack-and-pinion mechanism and scissor lift mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
+      type: 'solidworks',
+    },
   ],
-
+  
   'CFD Projects': [
     {
       title: 'Flow Around Cylindrical Obstacles',
+      thumbnail: ThumbnailCFD,
       images: [CFDPipeFlow],
       shortDescription:
-        'CFD analysis of pressure, velocity, and vorticity around varying obstacle diameters.',
+      'CFD analysis of pressure, velocity, and vorticity around varying obstacle diameters.',
       fullDescription:
-        'This project involved a Computational Fluid Dynamics (CFD) investigation of internal flow around cylindrical obstacles of varying diameters placed within a flow domain. The objective was to evaluate the influence of obstacle size on pressure distribution, velocity profiles, wake formation, flow separation, and vorticity generation. The geometry was meshed and simulated under consistent flow conditions while systematically varying obstacle diameter to enable direct comparison of flow behavior. Post-processing was performed using pressure contours, velocity fields, streamlines, and vorticity plots to examine the effects of changing blockage ratio on fluid flow characteristics. The study provided practical experience in geometry preparation, mesh generation, boundary condition implementation, solver configuration, convergence monitoring, and CFD result interpretation while reinforcing fundamental fluid mechanics concepts such as pressure drag, recirculation zones, vortex formation, and flow separation.',
+      'This project involved a Computational Fluid Dynamics (CFD) investigation of internal flow around cylindrical obstacles of varying diameters placed within a flow domain. The objective was to evaluate the influence of obstacle size on pressure distribution, velocity profiles, wake formation, flow separation, and vorticity generation. The geometry was meshed and simulated under consistent flow conditions while systematically varying obstacle diameter to enable direct comparison of flow behavior. Post-processing was performed using pressure contours, velocity fields, streamlines, and vorticity plots to examine the effects of changing blockage ratio on fluid flow characteristics. The study provided practical experience in geometry preparation, mesh generation, boundary condition implementation, solver configuration, convergence monitoring, and CFD result interpretation while reinforcing fundamental fluid mechanics concepts such as pressure drag, recirculation zones, vortex formation, and flow separation.',
       type: 'cfd',
     },
   ],
@@ -1567,8 +1589,9 @@ const Projects = () => {
               const isEng     = ENGINEERING_TYPES.includes(project.type);
               const isWeb     = project.type === 'web';
               const isGraphic = activeCategory === 'Graphic Designing Projects';
-              // thumbnail = first image in the images array
-              const thumb     = project.images?.[0] || project.image || project.thumbnail;
+              // thumbnail shown on grid card — uses dedicated thumbnail if provided,
+              // otherwise falls back to first image in the carousel array
+              const thumb = project.thumbnail ?? project.images?.[0] ?? project.image;
 
               return (
                 <motion.div

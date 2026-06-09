@@ -995,6 +995,17 @@ import GearBox5 from '../assets/gearbox/GearBox5.png';
 import GearBox6 from '../assets/gearbox/GearBox6.png';
 import GearBox7 from '../assets/gearbox/GearBox7.png';
 
+//ManualRockerArmPunchingMachine
+import ManualRockerArmPunchingMachine1 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine1.png';
+import ManualRockerArmPunchingMachine2 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine2.png'; 
+import ManualRockerArmPunchingMachine3 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine3.png';
+import ManualRockerArmPunchingMachine4 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine4.png';
+import ManualRockerArmPunchingMachine5 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine5.png';
+import ManualRockerArmPunchingMachine6 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine6.png';
+import ManualRockerArmPunchingMachine7 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine7.png';
+import ManualRockerArmPunchingMachine8 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine8.png';
+// import ManualRockerArmPunchingMachine9 from '../assets/ManualRockerArmPunchingMachine/ManualRockerArmPunchingMachine9.png';
+
 // RAMP
 import SPCRamp1 from '../assets/spcRamp/SPCRamp1.png';
 import SPCRamp2 from '../assets/spcRamp/SPCRamp2.png';
@@ -1057,7 +1068,16 @@ const projectData = {
       shortDescription:
         'Helical gearbox assembly featuring ISO-standard gears, shafts, bearings, and housing.',
       fullDescription:
-        'This project involved the design and assembly of a single-stage helical gearbox in SolidWorks using industry-standard mechanical design practices. The gearbox consists of a 13-tooth helical pinion, mating helical gear, transmission shafts, rolling-element bearings, flanges, and a split housing assembly comprising upper and lower casing components. ISO-standard helical gears were selected and integrated into the design to ensure proper meshing, efficient power transmission, and reduced noise levels compared to spur gear systems. The gearbox housing was modelled as a split casing to facilitate assembly, maintenance, and component inspection while providing adequate support for shafts and bearings. Individual components were modelled as separate parts and assembled using SolidWorks mates and alignment constraints. Particular attention was given to shaft positioning, bearing seating, gear alignment, and housing clearances to ensure smooth operation and accurate power transmission. Interference detection and assembly validation tools were used to verify component compatibility and eliminate potential collisions.The project demonstrates proficiency in mechanical power transmission design, assembly modelling, housing design, bearing integration, and engineering documentation. Detailed part models, assemblies, and manufacturing-oriented designs were developed to reflect real-world gearbox construction practices commonly used in industrial machinery and power transmission systems.',
+        'This project involved designing a manual rocker arm punching machine in SolidWorks for sheet metal punching and light-duty pressing operations. The assembly consists of a rigid C-frame structure, rocker arm mechanism, threaded power screw, punch holder, die block, and supporting fasteners. The rocker arm converts manual rotational input into controlled linear motion of the punch, providing mechanical advantage while maintaining alignment between punch and die. Individual components were modelled as separate parts and assembled using mates to verify motion and fit. The design emphasized manufacturability, structural rigidity, assembly feasibility, and smooth force transmission, while incorporating standard mechanical elements such as threaded shafts, guide components, bolted joints, and precision mating features.',
+      type: 'solidworks',
+    },
+    {
+      title: 'Manual Rocker Arm Punching Machine',
+      images: [ManualRockerArmPunchingMachine1, ManualRockerArmPunchingMachine2, ManualRockerArmPunchingMachine3, ManualRockerArmPunchingMachine4, ManualRockerArmPunchingMachine5, ManualRockerArmPunchingMachine6, ManualRockerArmPunchingMachine7, ManualRockerArmPunchingMachine8],   // ← replace with real imports
+      shortDescription:
+        'Manually actuated punching machine designed using rocker arm linkage mechanism.',
+      fullDescription:
+        'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, rack-and-pinion mechanism and scissor lift mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
       type: 'solidworks',
     },
     {

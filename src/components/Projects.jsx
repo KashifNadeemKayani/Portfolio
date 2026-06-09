@@ -967,6 +967,7 @@ import ThumbnailGearBox from '../assets/Thumbnails/ThumbnailGearBox.png';
 import ThumbnailRamp from '../assets/Thumbnails/ThumbnailRamp.png';
 import ThumbnailRoboticArm from '../assets/Thumbnails/ThumbnailRoboticArm.png';
 import ThumbnailRockerArm from '../assets/Thumbnails/ThumbnailRockerArm.png';
+import ThumbnailCClamp from '../assets/Thumbnails/ThumbnailCClamp.png';
 
 
 
@@ -1022,6 +1023,14 @@ import ManualRockerArmPunchingMachine8 from '../assets/ManualRockerArmPunchingMa
 // RAMP
 import SPCRamp1 from '../assets/spcRamp/SPCRamp1.png';
 import SPCRamp2 from '../assets/spcRamp/SPCRamp2.png';
+
+// C Clamp
+import CClamp1 from '../assets/CClamp/CClamp1.png';
+// import CClamp2 from '../assets/CClamp/CClamp2.png'; 
+import CClamp3 from '../assets/CClamp/CClamp3.png';
+import CClamp4 from '../assets/CClamp/CClamp4.png';
+import CClamp5 from '../assets/CClamp/CClamp5.png';
+import CClamp6 from '../assets/CClamp/CClamp6.png';
 
 //Crankslider
 import SWCrankSlider1 from '../assets/CrankSlider/SWCrankSlider1.png';
@@ -1099,10 +1108,20 @@ const projectData = {
     },
     {
       title: 'SMME Piston Cup Ramp',
+      thumbnail: ThumbnailCClamp,
+      images: [CClamp1,  CClamp3, CClamp4, CClamp5,  CClamp6],
+      shortDescription:
+        'Weldment-based inspection ramp designed for SMME Piston Cup vehicles.',
+      fullDescription:
+        'This project involved designing a complete C-clamp assembly in SolidWorks consisting of a rigid C-frame, threaded power screw, swivel pressure pad, handle bar, and fastening features. The model was created to demonstrate mechanical clamping principles, thread modelling, force transmission, and manufacturable part design. Individual components were modelled separately and assembled using mates to verify alignment, motion, and functionality. The threaded spindle converts rotational input into linear clamping force, while the reinforced frame geometry ensures structural rigidity under load. The project provided practical experience in part modelling, assembly design, thread generation, and mechanical component integration.',
+      type: 'solidworks',
+    },
+    {
+      title: 'C-Clamp Assembly Design',
       thumbnail: ThumbnailRamp,
       images: [SPCRamp1, SPCRamp2],
       shortDescription:
-        'Weldment-based inspection ramp designed for SMME Piston Cup vehicles.',
+        'Functional C-clamp assembly featuring a threaded spindle and adjustable clamping mechanism.',
       fullDescription:
         'This project involved the design and development of a weldment-based vehicle inspection ramp for the SMME Piston Cup, the flagship off-road vehicle design competition organized by the School of Mechanical and Manufacturing Engineering (SMME), NUST. The ramp was modelled in SolidWorks using weldment features and designed through precise geometric calculations to achieve the required operating angle, dimensions, and load-bearing capability. The mechanism was engineered such that once a buggy ascends the inclined platform, the structure rotates about a fixed pivot point and settles into a stable horizontal position, allowing safe vehicle inspection. Particular attention was given to structural rigidity, load distribution, manufacturability, weldment optimization, and operational safety. The project demonstrates practical application of CAD modelling, weldment design, engineering calculations, and real-world competition infrastructure development.',
       type: 'solidworks',

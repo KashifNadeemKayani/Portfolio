@@ -968,8 +968,23 @@ import ThumbnailRamp from '../assets/Thumbnails/ThumbnailRamp.png';
 import ThumbnailRoboticArm from '../assets/Thumbnails/ThumbnailRoboticArm.png';
 import ThumbnailRockerArm from '../assets/Thumbnails/ThumbnailRockerArm.png';
 import ThumbnailCClamp from '../assets/Thumbnails/ThumbnailCClamp.png';
+import ThumbnailUDLBeam from '../assets/Thumbnails/ThumbnailUDLBeam.png';
+import ThumbnailTrussAnalysis from '../assets/Thumbnails/ThumbnailTrussAnalysis.png';
 
 
+
+// FEA
+import UDLBeam1 from '../assets/FEA/UDLBeam/UDLBeam1.png';
+import UDLBeam2 from '../assets/FEA/UDLBeam/UDLBeam2.png';
+import UDLBeam3 from '../assets/FEA/UDLBeam/UDLBeam3.png';
+import UDLBeam4 from '../assets/FEA/UDLBeam/UDLBeam4.png';
+import UDLBeam5 from '../assets/FEA/UDLBeam/UDLBeam5.png';
+
+import TrussAnalysis1 from '../assets/FEA/TrussAnalysis/TrussAnalysis1.png';
+import TrussAnalysis2 from '../assets/FEA/TrussAnalysis/TrussAnalysis2.png';
+import TrussAnalysis3 from '../assets/FEA/TrussAnalysis/TrussAnalysis3.png';
+import TrussAnalysis4 from '../assets/FEA/TrussAnalysis/TrussAnalysis4.png';
+import TrussAnalysis5 from '../assets/FEA/TrussAnalysis/TrussAnalysis5.png';
 
 //CFD
 import CFDPipeFlow from '../assets/CFD/CFDPipeFlow.jpg';
@@ -1158,6 +1173,28 @@ const projectData = {
     },
   ],
   
+  'FEA Projects': [
+    {
+      title: 'Beam Under UDL Analysis',
+      thumbnail: ThumbnailUDLBeam,
+      images: [UDLBeam1, UDLBeam2, UDLBeam3, UDLBeam4, UDLBeam5],
+      shortDescription:
+      'Performed finite element analysis of a beam under UDL using ANSYS Mechanical.',
+      fullDescription:
+      'Analyzed a simply supported steel beam subjected to a 50 kN/m uniformly distributed load using ANSYS Mechanical and analytical beam theory. The study included mesh generation, boundary condition application, and evaluation of equivalent stress, elastic strain, and directional deformation. Theoretical calculations predicted a maximum bending stress of 76 MPa and a maximum deflection of 6.35 mm, which were validated through finite element analysis. The project demonstrates proficiency in structural analysis, result validation, and engineering simulation using ANSYS.',
+      type: 'fea',
+    },
+    {
+      title: '2D Truss Structure Analysis',
+      thumbnail: ThumbnailTrussAnalysis,
+      images: [TrussAnalysis1, TrussAnalysis2, TrussAnalysis3, TrussAnalysis4, TrussAnalysis5],
+      shortDescription:
+      'Finite element analysis of a symmetric 2D truss to evaluate stress distribution, axial forces, reaction forces, and nodal displacements under static loading.',
+      fullDescription:
+      'A two-dimensional symmetric truss structure was analyzed using COMSOL Multiphysics to investigate its structural response under a static vertical load. The study evaluated stress distribution, internal axial forces, support reactions, and nodal displacements while assuming linear elastic material behavior. Finite element results were validated against analytical calculations based on equilibrium and axial deformation theory. The analysis demonstrated accurate prediction of load transfer mechanisms, structural deformation, and support reactions, confirming the reliability of finite element methods for planar truss structures.',
+      type: 'fea',
+    },
+  ],
   'CFD Projects': [
     {
       title: 'Flow Around Cylindrical Obstacles',
@@ -1218,7 +1255,7 @@ const projectData = {
 };
 
 const DISABLED_CATEGORIES = ['Video Editing Projects'];
-const ENGINEERING_TYPES   = ['solidworks', 'cfd'];
+const ENGINEERING_TYPES   = ['solidworks', 'cfd', 'fea'];
 
 // =============================================================================
 // HoverCard — thumbnail card with dark overlay on hover

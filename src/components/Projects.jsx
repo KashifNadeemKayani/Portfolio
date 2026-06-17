@@ -968,12 +968,30 @@ import ThumbnailRamp from '../assets/Thumbnails/ThumbnailRamp.png';
 import ThumbnailRoboticArm from '../assets/Thumbnails/ThumbnailRoboticArm.png';
 import ThumbnailRockerArm from '../assets/Thumbnails/ThumbnailRockerArm.png';
 import ThumbnailCClamp from '../assets/Thumbnails/ThumbnailCClamp.png';
+import ThumbnailSpannerStructuralAnalysis from '../assets/Thumbnails/ThumbnailSpannerStructuralAnalysis.png';
+import ThumbnailAluminumBracket from '../assets/Thumbnails/ThumbnailAluminumBracket.png';
 import ThumbnailUDLBeam from '../assets/Thumbnails/ThumbnailUDLBeam.png';
 import ThumbnailTrussAnalysis from '../assets/Thumbnails/ThumbnailTrussAnalysis.png';
 
 
 
 // FEA
+import SpannerStructuralAnalysis1 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis1.png';
+import SpannerStructuralAnalysis2 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis2.png';
+import SpannerStructuralAnalysis3 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis3.png';
+import SpannerStructuralAnalysis4 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis4.png';
+import SpannerStructuralAnalysis5 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis5.png';  
+import SpannerStructuralAnalysis6 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis6.png';
+import SpannerStructuralAnalysis7 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis7.png';
+import SpannerStructuralAnalysis8 from '../assets/FEA/SpannerStructuralAnalysis/SpannerStructuralAnalysis8.png';
+
+import AluminumBracket1 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket1.png';
+import AluminumBracket2 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket2.png';
+import AluminumBracket3 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket3.png';
+import AluminumBracket4 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket4.png';
+import AluminumBracket5 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket5.png';  
+import AluminumBracket6 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket6.png';
+
 import UDLBeam1 from '../assets/FEA/UDLBeam/UDLBeam1.png';
 import UDLBeam2 from '../assets/FEA/UDLBeam/UDLBeam2.png';
 import UDLBeam3 from '../assets/FEA/UDLBeam/UDLBeam3.png';
@@ -1174,6 +1192,26 @@ const projectData = {
   ],
   
   'FEA Projects': [
+    {
+      title: 'Spanner Structural Analysis',
+      thumbnail: ThumbnailSpannerStructuralAnalysis,
+      images: [SpannerStructuralAnalysis1, SpannerStructuralAnalysis2, SpannerStructuralAnalysis3, SpannerStructuralAnalysis4, SpannerStructuralAnalysis5],
+      shortDescription:
+      'Static structural analysis of a spanner under variable loading using COMSOL Multiphysics.',
+      fullDescription:
+      'A finite element analysis of a structural steel spanner was performed using COMSOL Multiphysics to evaluate stress distribution and deformation under static loading conditions. A parametric study was conducted by applying forces ranging from 10 N to 190 N while constraining the ring end of the spanner. The analysis investigated von Mises stress distribution, displacement magnitude, and stress variation along the spanner geometry. Results revealed maximum stress concentration at the junction between the head and handle due to bending effects. The simulation was validated using classical cantilever beam theory, demonstrating good agreement between theoretical predictions and finite element results. The study successfully identified critical stress regions and the load levels that may lead to yielding and structural failure.',
+      type: 'fea',
+    },
+    {
+      title: 'Aluminum Bracket Analysis',
+      thumbnail: ThumbnailAluminumBracket,
+      images: [AluminumBracket1, AluminumBracket2, AluminumBracket3, AluminumBracket4, AluminumBracket5, AluminumBracket6],
+      shortDescription:
+      'Structural analysis of an aluminum bracket under variable loading using COMSOL Multiphysics.',
+      fullDescription:
+      'A finite element analysis was conducted on a three-dimensional aluminum bracket using COMSOL Multiphysics to evaluate its structural response under static loading conditions. The bracket geometry included circular holes, an elongated slot, and curved transition regions that introduce stress concentrations during operation. A parametric load study ranging from 1000 N to 20000 N was performed to investigate displacement and von Mises stress behavior. Results showed maximum deformation near the loaded circular hole, while peak stresses occurred around the loaded hole and curved transition regions. The analysis revealed that the bracket reaches the ultimate tensile strength of aluminum (260 MPa) at approximately 4000 N, indicating the safe load limit of the component. This study demonstrates the application of finite element methods for identifying critical stress locations and assessing structural integrity in mechanical support components.',
+      type: 'fea',
+    },
     {
       title: 'Beam Under UDL Analysis',
       thumbnail: ThumbnailUDLBeam,

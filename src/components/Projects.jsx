@@ -972,6 +972,10 @@ import ThumbnailSpannerStructuralAnalysis from '../assets/Thumbnails/ThumbnailSp
 import ThumbnailAluminumBracket from '../assets/Thumbnails/ThumbnailAluminumBracket.png';
 import ThumbnailUDLBeam from '../assets/Thumbnails/ThumbnailUDLBeam.png';
 import ThumbnailTrussAnalysis from '../assets/Thumbnails/ThumbnailTrussAnalysis.png';
+import ThumbnailAxisymmetricHeatConduction from '../assets/Thumbnails/ThumbnailAxisymmetricHeatConduction.png';
+import ThumbnailTransientThermalAnalysis from '../assets/Thumbnails/ThumbnailTransientThermalAnalysis.png';
+import ThumbnailThermalExpansionAnalysis from '../assets/Thumbnails/ThumbnailThermalExpansionAnalysis.png';
+import CPUHeatSinkThermalPerformanceAnalysis from '../assets/Thumbnails/ThumbnailCPUHeatSinkThermalPerformanceAnalysis.png';
 
 
 
@@ -991,6 +995,39 @@ import AluminumBracket3 from '../assets/FEA/AluminumBracketAnalysis/AluminumBrac
 import AluminumBracket4 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket4.png';
 import AluminumBracket5 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket5.png';  
 import AluminumBracket6 from '../assets/FEA/AluminumBracketAnalysis/AluminumBracket6.png';
+
+import CPUHeatSinkThermalPerformanceAnalysis1 from '../assets/FEA/CPUHeatSinkThermalPerformanceAnalysis/CPUHeatSinkThermalPerformanceAnalysis1.png';
+import CPUHeatSinkThermalPerformanceAnalysis2 from '../assets/FEA/CPUHeatSinkThermalPerformanceAnalysis/CPUHeatSinkThermalPerformanceAnalysis2.png';
+import CPUHeatSinkThermalPerformanceAnalysis3 from '../assets/FEA/CPUHeatSinkThermalPerformanceAnalysis/CPUHeatSinkThermalPerformanceAnalysis3.png';
+import CPUHeatSinkThermalPerformanceAnalysis4 from '../assets/FEA/CPUHeatSinkThermalPerformanceAnalysis/CPUHeatSinkThermalPerformanceAnalysis4.png';
+import CPUHeatSinkThermalPerformanceAnalysis5 from '../assets/FEA/CPUHeatSinkThermalPerformanceAnalysis/CPUHeatSinkThermalPerformanceAnalysis5.png';
+import CPUHeatSinkThermalPerformanceAnalysis6 from '../assets/FEA/CPUHeatSinkThermalPerformanceAnalysis/CPUHeatSinkThermalPerformanceAnalysis6.png';
+
+import AxisymmetricHeatConduction1 from '../assets/FEA/AxisymmetricHeatConduction/AxisymmetricHeatConduction1.png';
+import AxisymmetricHeatConduction2 from '../assets/FEA/AxisymmetricHeatConduction/AxisymmetricHeatConduction2.png';
+import AxisymmetricHeatConduction3 from '../assets/FEA/AxisymmetricHeatConduction/AxisymmetricHeatConduction3.png';
+import AxisymmetricHeatConduction4 from '../assets/FEA/AxisymmetricHeatConduction/AxisymmetricHeatConduction4.png';
+import AxisymmetricHeatConduction5 from '../assets/FEA/AxisymmetricHeatConduction/AxisymmetricHeatConduction5.png';
+import AxisymmetricHeatConduction6 from '../assets/FEA/AxisymmetricHeatConduction/AxisymmetricHeatConduction6.png';
+import AxisymmetricHeatConduction7 from '../assets/FEA/AxisymmetricHeatConduction/AxisymmetricHeatConduction7.png';
+
+import TransientThermalAnalysis1 from '../assets/FEA/TransientThermalAnalysis/TransientThermalAnalysis1.png'; 
+import TransientThermalAnalysis2 from '../assets/FEA/TransientThermalAnalysis/TransientThermalAnalysis2.png';
+import TransientThermalAnalysis3 from '../assets/FEA/TransientThermalAnalysis/TransientThermalAnalysis3.png';
+import TransientThermalAnalysis4 from '../assets/FEA/TransientThermalAnalysis/TransientThermalAnalysis4.png';
+import TransientThermalAnalysis5 from '../assets/FEA/TransientThermalAnalysis/TransientThermalAnalysis5.png';
+import TransientThermalAnalysis6 from '../assets/FEA/TransientThermalAnalysis/TransientThermalAnalysis6.png';
+import TransientThermalAnalysis7 from '../assets/FEA/TransientThermalAnalysis/TransientThermalAnalysis7.png';
+
+import ThermalExpansionAnalysis1 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis1.png';
+import ThermalExpansionAnalysis2 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis2.png';
+import ThermalExpansionAnalysis3 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis3.png';
+import ThermalExpansionAnalysis4 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis4.png';
+import ThermalExpansionAnalysis5 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis5.png';
+import ThermalExpansionAnalysis6 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis6.png';
+import ThermalExpansionAnalysis7 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis7.png';
+import ThermalExpansionAnalysis8 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis8.png';
+import ThermalExpansionAnalysis9 from '../assets/FEA/ThermalExpansionAnalysis/ThermalExpansionAnalysis9.png';
 
 import UDLBeam1 from '../assets/FEA/UDLBeam/UDLBeam1.png';
 import UDLBeam2 from '../assets/FEA/UDLBeam/UDLBeam2.png';
@@ -1184,14 +1221,58 @@ const projectData = {
       thumbnail: ThumbnailBasicProjects,
       images: [Flange1, Flange2, Archimedes1, Archimedes2, DrillBit, RacknPinion1, RacknPinion2, SciissorLift1, SciissorLift2, SciissorLift3],
       shortDescription:
-        'Collection of fundamental mechanical components modelled using SolidWorks design techniques.',
+      'Collection of fundamental mechanical components modelled using SolidWorks design techniques.',
       fullDescription:
-        'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, rack-and-pinion mechanism and scissor lift mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
+      'This project consists of a collection of fundamental mechanical components developed in SolidWorks to strengthen proficiency in parametric CAD modelling and feature-based design. The models include an Archimedes screw, twist drill bit, pipe flange assembly, rack-and-pinion mechanism and scissor lift mechanism, each created using industry-standard modelling techniques such as sweeps, helices, circular patterns, revolved features, and assembly constraints. The project provided hands-on experience with geometric design, mechanical component modelling, dimensional control, and engineering drawing preparation while reinforcing core SolidWorks workflows commonly used in mechanical design and manufacturing applications.',
       type: 'solidworks',
     },
   ],
   
   'FEA Projects': [
+    {
+      title: 'Axisymmetric Heat Conduction Analysis',
+      thumbnail: ThumbnailAxisymmetricHeatConduction,
+      images: [AxisymmetricHeatConduction1, AxisymmetricHeatConduction2, AxisymmetricHeatConduction3, AxisymmetricHeatConduction4, AxisymmetricHeatConduction5, AxisymmetricHeatConduction6, AxisymmetricHeatConduction7],
+      shortDescription:
+      'Steady-state thermal analysis of a cylindrical domain using COMSOL Multiphysics.',
+      fullDescription:
+      'A two-dimensional axisymmetric heat conduction analysis was performed in COMSOL Multiphysics to investigate the temperature distribution within a cylindrical domain under steady-state conditions. The model incorporated prescribed temperature boundaries, applied heat flux, and insulation conditions to simulate realistic thermal behavior. An axisymmetric formulation was used to accurately represent the three-dimensional cylindrical geometry while significantly reducing computational cost. Results showed a maximum temperature of approximately 478 K near the heated inner boundary and a minimum temperature of 273 K at the cooled outer surfaces. Temperature contours demonstrated heat transfer in both radial and axial directions. Validation against the NAFEMS benchmark yielded a temperature of 332.96 K compared to the reference value of 332.97 K, corresponding to an error of approximately 0.003%, confirming the accuracy and reliability of the finite element model.',
+      type: 'fea',
+    },
+    {
+      title: 'Transient Thermal Analysis',
+      thumbnail: ThumbnailTransientThermalAnalysis,
+      images: [TransientThermalAnalysis1, TransientThermalAnalysis2, TransientThermalAnalysis3, TransientThermalAnalysis4, TransientThermalAnalysis5, TransientThermalAnalysis6, TransientThermalAnalysis7],
+      shortDescription:
+      'Time-dependent heat conduction analysis of an axisymmetric cylindrical domain using COMSOL Multiphysics.',
+      fullDescription:
+      'A transient thermal analysis was performed in COMSOL Multiphysics to investigate the time-dependent heat transfer behavior of an axisymmetric cylindrical domain subjected to sudden thermal loading. The model initially remained at 0°C, while all external boundaries were instantaneously raised to 1000°C, creating a step-heating condition. Heat diffusion from the boundaries toward the interior was studied over a simulation period of 380 seconds. The analysis compared continuous heating with a second scenario where boundaries became insulated after 190 seconds. Results showed gradual temperature propagation, formation of radial and axial thermal gradients, and a temperature of approximately 186.5°C at the validation point (r = 0.1 m, z = 0.3 m) after 190 seconds. The comparison demonstrated that insulation significantly reduced the rate of temperature rise, with the temperature difference between both cases reaching nearly 50 K at 380 seconds. The study highlights the influence of boundary conditions, thermal inertia, and material properties on transient heat transfer behavior while validating the effectiveness of axisymmetric finite element modeling.',
+      type: 'fea',
+    },
+    {
+      title: 'CPU Heat Sink Thermal Performance Analysis',
+      thumbnail: CPUHeatSinkThermalPerformanceAnalysis,
+      images: [CPUHeatSinkThermalPerformanceAnalysis1, CPUHeatSinkThermalPerformanceAnalysis2, CPUHeatSinkThermalPerformanceAnalysis3, CPUHeatSinkThermalPerformanceAnalysis4, CPUHeatSinkThermalPerformanceAnalysis5, CPUHeatSinkThermalPerformanceAnalysis6],
+      shortDescription:
+      'Steady-state thermal analysis of an aluminum CPU heat sink under natural and forced convection using COMSOL Multiphysics..',
+      fullDescription:
+      `A comprehensive thermal performance analysis of an aluminum CPU heat sink was conducted using COMSOL Multiphysics to evaluate its cooling effectiveness under natural and forced convection conditions. The heat sink geometry, consisting of 25 parallel fins mounted on an aluminum base plate, was designed in SolidWorks and imported into COMSOL for finite element analysis. A processor heat load of approximately 120 W was applied to the base through a uniform heat flux boundary condition, while convective cooling was imposed on all exposed surfaces.
+
+Two operating scenarios were investigated: natural convection (h = 10 W/m²·K) and forced convection (h = 80 W/m²·K). The study examined temperature distribution, conductive heat flux, convective heat flux, temperature gradients along fin height, and overall thermal behavior of the heat sink. Results showed a maximum temperature of 372.31 K under natural convection and 306.62 K under forced convection, demonstrating a significant reduction in thermal resistance when airflow is introduced.
+
+Additional validation was performed using analytical heat transfer calculations based on fin theory, energy balance equations, and Fourier’s law of conduction. Simulation results showed strong agreement with theoretical predictions, with errors below 5% for natural convection and below 1% for forced convection. The project highlights the importance of convection enhancement, fin geometry, and airflow management in electronic cooling applications and demonstrates the use of finite element methods for thermal design optimization.`,
+      type: 'fea',
+    },
+    {
+      title: 'Thermal Expansion Analysis',
+      thumbnail: ThumbnailThermalExpansionAnalysis,
+      images: [ThermalExpansionAnalysis1, ThermalExpansionAnalysis2, ThermalExpansionAnalysis3, ThermalExpansionAnalysis4, ThermalExpansionAnalysis5, ThermalExpansionAnalysis6, ThermalExpansionAnalysis7, ThermalExpansionAnalysis8, ThermalExpansionAnalysis9],
+      shortDescription:
+      'Thermo-mechanical analysis of a heated aluminum plate using COMSOL Multiphysics.',
+      fullDescription:
+      'A coupled thermo-mechanical analysis was performed in COMSOL Multiphysics to investigate the effects of thermal expansion in a constrained aluminum plate subjected to localized heating. The model combined Heat Transfer in Solids and Solid Mechanics through thermal expansion coupling to capture the interaction between temperature rise, deformation, and stress generation. A central heat source and convective cooling boundary conditions produced a radial temperature gradient across the plate, while fixed supports at the corner holes restricted free thermal expansion. Results showed the highest temperatures near the heated center, maximum von Mises stresses around the constrained holes due to stress concentration, and outward deformation of the plate with peak displacement occurring at free edges. The study demonstrates how thermal loads and mechanical constraints interact to influence structural performance and highlights the importance of thermo-mechanical design considerations in engineering applications.',
+      type: 'fea',
+    },
     {
       title: 'Spanner Structural Analysis',
       thumbnail: ThumbnailSpannerStructuralAnalysis,

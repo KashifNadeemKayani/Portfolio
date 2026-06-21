@@ -971,6 +971,8 @@ import ThumbnailCClamp from '../assets/Thumbnails/ThumbnailCClamp.png';
 import ThumbnailSpannerStructuralAnalysis from '../assets/Thumbnails/ThumbnailSpannerStructuralAnalysis.png';
 import ThumbnailAluminumBracket from '../assets/Thumbnails/ThumbnailAluminumBracket.png';
 import ThumbnailUDLBeam from '../assets/Thumbnails/ThumbnailUDLBeam.png';
+import ThumbnailSteppedShaftStructuralAnalysis from '../assets/Thumbnails/ThumbnailSteppedShaftStructuralAnalysis.png';
+import ThumbnailSimplySupportedBeamPointLoadAnalysis from '../assets/Thumbnails/ThumbnailSimplySupportedBeamPointLoadAnalysis.png';
 import ThumbnailTrussAnalysis from '../assets/Thumbnails/ThumbnailTrussAnalysis.png';
 import ThumbnailAxisymmetricHeatConduction from '../assets/Thumbnails/ThumbnailAxisymmetricHeatConduction.png';
 import ThumbnailTransientThermalAnalysis from '../assets/Thumbnails/ThumbnailTransientThermalAnalysis.png';
@@ -1034,6 +1036,18 @@ import UDLBeam2 from '../assets/FEA/UDLBeam/UDLBeam2.png';
 import UDLBeam3 from '../assets/FEA/UDLBeam/UDLBeam3.png';
 import UDLBeam4 from '../assets/FEA/UDLBeam/UDLBeam4.png';
 import UDLBeam5 from '../assets/FEA/UDLBeam/UDLBeam5.png';
+
+import SteppedShaftStructuralAnalysis1 from '../assets/FEA/SteppedShaftStructuralAnalysis/SteppedShaftStructuralAnalysis1.png';
+import SteppedShaftStructuralAnalysis2 from '../assets/FEA/SteppedShaftStructuralAnalysis/SteppedShaftStructuralAnalysis2.png';
+import SteppedShaftStructuralAnalysis3 from '../assets/FEA/SteppedShaftStructuralAnalysis/SteppedShaftStructuralAnalysis3.png';
+import SteppedShaftStructuralAnalysis4 from '../assets/FEA/SteppedShaftStructuralAnalysis/SteppedShaftStructuralAnalysis4.png';
+
+import SimplySupportedBeamPointLoadAnalysis1 from '../assets/FEA/SimplySupportedBeamPointLoadAnalysis/SimplySupportedBeamPointLoadAnalysis1.png';
+import SimplySupportedBeamPointLoadAnalysis2 from '../assets/FEA/SimplySupportedBeamPointLoadAnalysis/SimplySupportedBeamPointLoadAnalysis2.png';
+import SimplySupportedBeamPointLoadAnalysis3 from '../assets/FEA/SimplySupportedBeamPointLoadAnalysis/SimplySupportedBeamPointLoadAnalysis3.png';
+import SimplySupportedBeamPointLoadAnalysis4 from '../assets/FEA/SimplySupportedBeamPointLoadAnalysis/SimplySupportedBeamPointLoadAnalysis4.png';
+
+
 
 import TrussAnalysis1 from '../assets/FEA/TrussAnalysis/TrussAnalysis1.png';
 import TrussAnalysis2 from '../assets/FEA/TrussAnalysis/TrussAnalysis2.png';
@@ -1301,6 +1315,25 @@ Additional validation was performed using analytical heat transfer calculations 
       'Performed finite element analysis of a beam under UDL using ANSYS Mechanical.',
       fullDescription:
       'Analyzed a simply supported steel beam subjected to a 50 kN/m uniformly distributed load using ANSYS Mechanical and analytical beam theory. The study included mesh generation, boundary condition application, and evaluation of equivalent stress, elastic strain, and directional deformation. Theoretical calculations predicted a maximum bending stress of 76 MPa and a maximum deflection of 6.35 mm, which were validated through finite element analysis. The project demonstrates proficiency in structural analysis, result validation, and engineering simulation using ANSYS.',
+      type: 'fea',
+    },
+    {
+      title: 'Stepped Shaft Structural Analysis',
+      thumbnail: ThumbnailSteppedShaftStructuralAnalysis,
+      images: [SteppedShaftStructuralAnalysis1, SteppedShaftStructuralAnalysis2, SteppedShaftStructuralAnalysis3, SteppedShaftStructuralAnalysis4],
+      shortDescription:
+      'Static structural analysis of a stepped shaft under axial loading using ANSYS.',
+      fullDescription:
+      `A stepped shaft was designed in SolidWorks and imported into ANSYS Workbench for static structural analysis. The objective of the study was to investigate the effect of geometric discontinuities on stress distribution and deformation under axial tensile loading. A fixed support was applied at one end of the shaft while an axial tensile force was applied at the opposite end. Finite element analysis was performed to evaluate total deformation and von Mises stress throughout the shaft geometry. The results showed that deformation increased progressively along the loading direction, reaching a maximum value of approximately 2.49 mm at the free end. Stress concentration regions were observed near the diameter transition sections, where abrupt changes in cross-sectional area caused localized increases in von Mises stress. The maximum equivalent stress reached approximately 356 MPa, highlighting the influence of stepped geometry on structural performance. The project demonstrates the application of finite element methods for analyzing stress concentration effects, deformation characteristics, and structural integrity of machine elements subjected to tensile loading.`,
+      type: 'fea',},
+    {
+      title: 'Simply Supported Beam – Point Load Analysis.',
+      thumbnail: ThumbnailSimplySupportedBeamPointLoadAnalysis,
+      images: [SimplySupportedBeamPointLoadAnalysis1, SimplySupportedBeamPointLoadAnalysis2, SimplySupportedBeamPointLoadAnalysis3, SimplySupportedBeamPointLoadAnalysis4],
+      shortDescription:
+      'Finite element analysis of a simply supported steel beam subjected to a central point load using ANSYS.',
+      fullDescription:
+      `A 3D model of a simply supported steel beam (200 mm × 200 mm cross-section, 4000 mm length) was analyzed in ANSYS under a concentrated mid-span load. The study evaluated deformation and von Mises stress distribution to understand the beam's structural response under bending. Results were compared with classical beam theory, demonstrating the expected maximum deflection and stress concentration at the beam center. The project involved geometry creation, meshing, boundary condition setup, static structural analysis, and post-processing of deformation and stress contours.`,
       type: 'fea',
     },
     {
